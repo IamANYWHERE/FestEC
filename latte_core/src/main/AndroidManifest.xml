@@ -1,2 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.toplyh.latte.core" />
+    package="com.toplyh.latte.core">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
+    <application android:allowBackup="true"
+        android:label="Latte"
+        android:supportsRtl="true"/>
+</manifest>
