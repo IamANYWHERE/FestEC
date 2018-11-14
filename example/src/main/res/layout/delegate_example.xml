@@ -8,6 +8,7 @@
 
 
     <TextView
+        android:id="@+id/tv_1"
         android:text="example_delegate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

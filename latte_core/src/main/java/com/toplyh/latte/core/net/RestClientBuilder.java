@@ -9,7 +9,6 @@ import com.toplyh.latte.core.net.callback.ISuccess;
 import com.toplyh.latte.core.ui.LoaderStyle;
 
 import java.io.File;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.WeakHashMap;
 
@@ -28,6 +27,9 @@ public class RestClientBuilder {
     private File mFile = null;
     private Context mContext = null;
     private LoaderStyle mLoaderStyle = null;
+    private String mDownloadDir = null;
+    private String mExtension = null;
+    private String mName = null;
 
     RestClientBuilder() {
 
@@ -103,6 +105,21 @@ public class RestClientBuilder {
         return this;
     }
 
+    public final RestClientBuilder dir(String dir) {
+        this.mDownloadDir=dir;
+        return this;
+    }
+
+    public final RestClientBuilder extension(String extension){
+        this.mExtension=extension;
+        return this;
+    }
+
+    public final RestClientBuilder name(String name){
+        this.mName=name;
+        return this;
+    }
+
     public final RestClientBuilder onRequest(IRequest iRequest) {
         this.mIRequest = iRequest;
         return this;
@@ -121,6 +138,6 @@ public class RestClientBuilder {
     }
 
     public final RestClient build() {
-        return new RestClient(mUrl, PARAMS, mIRequest, mISuccess, mIFailure, mIError, mBody, mFile, mContext, mLoaderStyle);
+        return new RestClient(mUrl, PARAMS, mIRequest, mDownloadDir, mExtension, mName, mISuccess, mIFailure, mIError, mBody, mFile, mContext, mLoaderStyle);
     }
 }

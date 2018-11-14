@@ -7,6 +7,7 @@ import com.toplyh.latte.core.net.callback.IFailure;
 import com.toplyh.latte.core.net.callback.IRequest;
 import com.toplyh.latte.core.net.callback.ISuccess;
 import com.toplyh.latte.core.net.callback.RequestCallbacks;
+import com.toplyh.latte.core.net.download.DownloadHandler;
 import com.toplyh.latte.core.ui.LatteLoader;
 import com.toplyh.latte.core.ui.LoaderStyle;
 
@@ -14,7 +15,6 @@ import java.io.File;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -28,6 +28,9 @@ public class RestClient {
     private final String URL;
     private static final WeakHashMap<String, Object> PARAMS = RestCreator.getParams();
     private final IRequest REQUEST;
+    private final String DOWNLOAD_DIR;
+    private final String EXTENSION;
+    private final String NAME;
     private final ISuccess SUCCESS;
     private final IFailure FAILURE;
     private final IError ERROR;
@@ -39,7 +42,11 @@ public class RestClient {
 
     public RestClient(String url,
                       Map<String, Object> params,
-                      IRequest request, ISuccess success,
+                      IRequest request,
+                      String download_dir,
+                      String extension,
+                      String name,
+                      ISuccess success,
                       IFailure failure,
                       IError error,
                       RequestBody body,
@@ -47,6 +54,9 @@ public class RestClient {
                       Context context,
                       LoaderStyle loaderStyle) {
         URL = url;
+        DOWNLOAD_DIR = download_dir;
+        EXTENSION = extension;
+        NAME = name;
         PARAMS.putAll(params);
         REQUEST = request;
         SUCCESS = success;
@@ -96,9 +106,9 @@ public class RestClient {
             case UPLOAD:
                 //requestFile表示对文件封装，body包含requestFile和一些其他信息，然后上传body
                 //requestFile是真正的文件内容，body将其包装成某一格式的数据（Form-data）然后和服务端交互
-                final RequestBody requestFile = RequestBody.create(MultipartBody.FORM,FILE);
-                final MultipartBody.Part body = MultipartBody.Part.createFormData("file",FILE.getName(),requestFile);
-                call = service.upload(URL,body);
+                final RequestBody requestFile = RequestBody.create(MultipartBody.FORM, FILE);
+                final MultipartBody.Part body = MultipartBody.Part.createFormData("file", FILE.getName(), requestFile);
+                call = service.upload(URL, body);
                 break;
             default:
                 break;
@@ -147,5 +157,17 @@ public class RestClient {
             }
             request(HttpMethod.PUT_RAW);
         }
+    }
+
+    public final void download() {
+        new DownloadHandler(URL,
+                REQUEST,
+                DOWNLOAD_DIR,
+                EXTENSION,
+                NAME,
+                SUCCESS,
+                FAILURE,
+                ERROR).
+                handleDownload();
     }
 }
