@@ -1,4 +1,4 @@
-package com.toplyh.latte.core.ui;
+package com.toplyh.latte.core.ui.loader;
 
 import android.content.Context;
 

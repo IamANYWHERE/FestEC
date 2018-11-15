@@ -29,28 +29,29 @@ public class ExampleDelegate extends LatteDelegate {
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
-        testRestClient();
+        //testRestClient();
     }
 
     private void testRestClient(){
         RestClient.builder()
-                .url("https://news.baidu.com/")
+                .url("http://127.0.0.1/index")
                 .loader(getContext())
                 .success(new ISuccess() {
                     @Override
                     public void onSuccess(String response) {
+                        Log.d("george","response = "+response);
                     }
                 })
                 .failure(new IFailure() {
                     @Override
                     public void onFailure() {
-
+                        Log.d("george","failure");
                     }
                 })
                 .error(new IError() {
                     @Override
                     public void onError(int code, String msg) {
-
+                        Log.d("george",msg);
                     }
                 })
                 .build()

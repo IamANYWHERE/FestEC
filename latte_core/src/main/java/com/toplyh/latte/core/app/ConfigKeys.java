@@ -6,9 +6,11 @@ package com.toplyh.latte.core.app;
  * 只有在使用它的时候才会被初始化
  * 也就是线程安全的懒汉模式
  */
-public enum ConfigType {
+public enum ConfigKeys {
     API_HOST,
     APPLICATION_CONTEXT,
     CONFIG_READY,
-    ICON
+    ICON,
+    LOADED_DELAYED,
+    INTERCEPTOR
 }

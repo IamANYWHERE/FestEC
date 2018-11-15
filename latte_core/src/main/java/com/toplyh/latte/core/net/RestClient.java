@@ -8,8 +8,8 @@ import com.toplyh.latte.core.net.callback.IRequest;
 import com.toplyh.latte.core.net.callback.ISuccess;
 import com.toplyh.latte.core.net.callback.RequestCallbacks;
 import com.toplyh.latte.core.net.download.DownloadHandler;
-import com.toplyh.latte.core.ui.LatteLoader;
-import com.toplyh.latte.core.ui.LoaderStyle;
+import com.toplyh.latte.core.ui.loader.LatteLoader;
+import com.toplyh.latte.core.ui.loader.LoaderStyle;
 
 import java.io.File;
 import java.util.Map;

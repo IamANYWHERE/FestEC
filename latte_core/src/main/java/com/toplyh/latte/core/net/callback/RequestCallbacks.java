@@ -2,8 +2,8 @@ package com.toplyh.latte.core.net.callback;
 
 import android.os.Handler;
 
-import com.toplyh.latte.core.ui.LatteLoader;
-import com.toplyh.latte.core.ui.LoaderStyle;
+import com.toplyh.latte.core.ui.loader.LatteLoader;
+import com.toplyh.latte.core.ui.loader.LoaderStyle;
 
 import retrofit2.Call;
 import retrofit2.Callback;
