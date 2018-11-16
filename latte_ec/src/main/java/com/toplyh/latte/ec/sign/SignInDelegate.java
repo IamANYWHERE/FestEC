@@ -25,6 +25,7 @@ public class SignInDelegate extends SignDelegate {
     @BindView(R2.id.edit_sign_in_password)
     TextInputEditText mPassword = null;
 
+
     @OnClick(R2.id.btn_sign_in)
     void onClickSignIn(){
         if (checkForm()) {
