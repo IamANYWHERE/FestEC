@@ -5,5 +5,7 @@
     
     <application android:allowBackup="true"
         android:label="Latte"
-        android:supportsRtl="true"/>
+        android:supportsRtl="true">
+        <activity android:name=".weichat.templates.WXPayEntryTemplate" />
+    </application>
 </manifest>

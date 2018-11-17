@@ -6,7 +6,6 @@ import com.toplyh.latte.core.app.AccountManager;
 import com.toplyh.latte.core.app.IUserChecker;
 import com.toplyh.latte.core.delegates.LatteDelegate;
 import com.toplyh.latte.core.ui.launcher.ILauncherListener;
-import com.toplyh.latte.core.ui.launcher.OnLauncherFinishTag;
 
 public abstract class BaseLauncherDelegate extends LatteDelegate {
 
@@ -25,14 +24,14 @@ public abstract class BaseLauncherDelegate extends LatteDelegate {
             @Override
             public void onSignIn() {
                 if (mILauncherListener != null) {
-                    mILauncherListener.onLauncherFinish(OnLauncherFinishTag.SIGNED);
+                    mILauncherListener.onSigned();
                 }
             }
 
             @Override
             public void onNotSignIn() {
                 if (mILauncherListener != null) {
-                    mILauncherListener.onLauncherFinish(OnLauncherFinishTag.NOT_SIGNED);
+                    mILauncherListener.onNotSigned();
                 }
             }
         });
