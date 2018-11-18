@@ -11,6 +11,7 @@ import com.toplyh.latte.core.app.Latte;
 import com.toplyh.latte.core.delegates.LatteDelegate;
 import com.toplyh.latte.core.ui.launcher.ILauncherListener;
 import com.toplyh.latte.ec.launcher.LauncherDelegate;
+import com.toplyh.latte.ec.main.EcBottomDelegate;
 import com.toplyh.latte.ec.sign.ISignListener;
 import com.toplyh.latte.ec.sign.SignInDelegate;
 
@@ -37,24 +38,26 @@ public class ExampleActivity extends ProxyActivity implements
 
     @Override
     public void onSignInSuccess() {
-        Toast.makeText(this, "登录成功", Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "登录成功", Toast.LENGTH_LONG).show();
+        startWithPop(new EcBottomDelegate());
     }
 
     @Override
     public void onSignUpSuccess() {
-        Toast.makeText(this, "注册成功", Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "注册成功", Toast.LENGTH_LONG).show();
+        startWithPop(new EcBottomDelegate());
     }
 
 
     @Override
     public void onSigned() {
-        Toast.makeText(this, "启动结束，用户登录了", Toast.LENGTH_LONG).show();
-        startWithPop(new ExampleDelegate());
+        //Toast.makeText(this, "启动结束，用户登录了", Toast.LENGTH_LONG).show();
+        startWithPop(new EcBottomDelegate());
     }
 
     @Override
     public void onNotSigned() {
-        Toast.makeText(this, "启动结束，用户没登录", Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "启动结束，用户没登录", Toast.LENGTH_LONG).show();
         startWithPop(new SignInDelegate());
     }
 }
