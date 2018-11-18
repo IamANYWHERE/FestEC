@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import com.toplyh.latte.annotations.AppRegisterGenerator;
 import com.toplyh.latte.core.activities.ProxyActivity;
+import com.toplyh.latte.core.app.Latte;
 import com.toplyh.latte.core.delegates.LatteDelegate;
 import com.toplyh.latte.core.ui.launcher.ILauncherListener;
 import com.toplyh.latte.ec.launcher.LauncherDelegate;
@@ -26,6 +27,7 @@ public class ExampleActivity extends ProxyActivity implements
         if (actionBar != null) {
             actionBar.hide();
         }
+        Latte.getConfigurator().withActivity(this);
     }
 
     @Override

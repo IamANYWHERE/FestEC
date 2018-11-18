@@ -12,6 +12,8 @@ import com.toplyh.latte.core.delegates.LatteDelegate;
 import com.toplyh.latte.core.net.RestClient;
 import com.toplyh.latte.core.net.callback.ISuccess;
 import com.toplyh.latte.core.util.log.LatteLogger;
+import com.toplyh.latte.core.weichat.LatteWeChat;
+import com.toplyh.latte.core.weichat.callbacks.IWeChatSignInCallback;
 import com.toplyh.latte.ec.R;
 import com.toplyh.latte.ec.R2;
 
@@ -48,7 +50,12 @@ public class SignInDelegate extends SignDelegate {
 
     @OnClick(R2.id.icon_sign_in_wechat)
     void onClickWeChat(){
+        LatteWeChat.getInstance().onSignSuccess(new IWeChatSignInCallback() {
+            @Override
+            public void onSignInSuccess(String userInfo) {
 
+            }
+        }).signIn();
     }
 
     @OnClick(R2.id.tv_link_sign_in)
