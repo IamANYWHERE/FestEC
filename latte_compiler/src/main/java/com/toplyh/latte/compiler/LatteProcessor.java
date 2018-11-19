@@ -56,7 +56,7 @@ public class LatteProcessor extends AbstractProcessor {
                       Class<? extends Annotation> annotation,
                       AnnotationValueVisitor visitor) {
         for (Element typeElement : env.getElementsAnnotatedWith(annotation)) {
-            //得到元素的所有注解
+            //gain all the annotations form element
             final List<? extends AnnotationMirror> annotationMirrors =
                     typeElement.getAnnotationMirrors();
 

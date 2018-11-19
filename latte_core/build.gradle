@@ -54,8 +54,9 @@ dependencies {
     api 'com.wang.avi:library:2.1.3'
     //Banner依赖，轮播图
     api 'com.bigkoo:ConvenientBanner:2.1.4'
-    //fastjson依赖
-    api 'com.alibaba:fastjson:1.2.51'
+    //fastjson的Android版依赖
+    //noinspection GradleDependency
+    api 'com.alibaba:fastjson:1.1.70.android'
     //logger依赖
     api 'com.orhanobut:logger:2.2.0'
     //greenDao依赖
@@ -63,4 +64,10 @@ dependencies {
     //微信依赖（包含统计）
     //noinspection GradleDynamicVersion
     api 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    //BaseRecyclerViewAdapterHelper依赖
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.42'
+    //glide依赖,图片处理
+    api 'com.github.bumptech.glide:glide:4.8.0'
+    api 'com.github.bumptech.glide:okhttp3-integration:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 }

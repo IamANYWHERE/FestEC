@@ -1,10 +1,20 @@
 package com.toplyh.latte.core.app;
 
 import android.content.Context;
+import android.os.Handler;
 
 import java.util.HashMap;
 
+
 public final class Latte {
+
+    private static final class Holder{
+        private static final Handler HANDLER = new Handler();
+    }
+
+    public static Handler getHandler(){
+        return Holder.HANDLER;
+    }
 
     /**
      * 开始初始化配置
