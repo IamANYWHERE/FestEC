@@ -25,7 +25,6 @@ public class ExampleApp extends Application {
                 .withAppSecret("")
                 .configure();
         initStetho();
-        Logger.addLogAdapter(new AndroidLogAdapter());
         DatabaseManager.getInstance().init(this);
     }
 

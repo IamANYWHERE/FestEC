@@ -66,7 +66,6 @@ public class MultipleRecyclerAdapter extends BaseMultiItemQuickAdapter<MultipleI
             case ItemType.TEXT:
                 text = item.getField(MultipleFields.TEXT);
                 holder.setText(R.id.text_single, text);
-                LatteLogger.d("convert",text+" "+item.getField(MultipleFields.ID));
                 break;
             case ItemType.IMAGE:
                 imageUrl = item.getField(MultipleFields.IMAGE_URL);

@@ -1,7 +1,9 @@
 package com.toplyh.latte.ec.main.index;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.GridLayoutManager;
@@ -15,6 +17,7 @@ import com.toplyh.latte.core.app.Latte;
 import com.toplyh.latte.core.delegates.bottom.BottomItemDelegate;
 import com.toplyh.latte.core.net.RestClient;
 import com.toplyh.latte.core.net.callback.ISuccess;
+import com.toplyh.latte.core.ui.recycler.BaseDecoration;
 import com.toplyh.latte.core.ui.recycler.MultipleFields;
 import com.toplyh.latte.core.ui.recycler.MultipleItemEntity;
 import com.toplyh.latte.core.ui.refresh.RefreshHandler;
@@ -60,6 +63,8 @@ public class IndexDelegate extends BottomItemDelegate {
     private void initRecyclerView() {
         final GridLayoutManager layoutManager = new GridLayoutManager(getContext(),4);
         mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.addItemDecoration
+                (BaseDecoration.create(ContextCompat.getColor(getContext(),R.color.app_background),5));
     }
 
     @Override
