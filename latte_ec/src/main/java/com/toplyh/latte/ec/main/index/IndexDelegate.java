@@ -24,6 +24,7 @@ import com.toplyh.latte.core.ui.refresh.RefreshHandler;
 import com.toplyh.latte.core.util.log.LatteLogger;
 import com.toplyh.latte.ec.R;
 import com.toplyh.latte.ec.R2;
+import com.toplyh.latte.ec.main.EcBottomDelegate;
 
 import java.util.ArrayList;
 
@@ -65,6 +66,8 @@ public class IndexDelegate extends BottomItemDelegate {
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.addItemDecoration
                 (BaseDecoration.create(ContextCompat.getColor(getContext(),R.color.app_background),5));
+        final EcBottomDelegate ecBottomDelegate=getParentDelegate();
+        mRecyclerView.addOnItemTouchListener(IndexItemClickListener.create(ecBottomDelegate));
     }
 
     @Override
