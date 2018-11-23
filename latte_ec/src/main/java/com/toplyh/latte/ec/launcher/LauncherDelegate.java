@@ -5,12 +5,12 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
-import com.toplyh.latte.core.ui.launcher.ScrollLauncherTag;
 import com.toplyh.latte.core.util.storage.LattePreference;
 import com.toplyh.latte.core.util.timer.BaseTimerTask;
 import com.toplyh.latte.core.util.timer.ITimerListener;
 import com.toplyh.latte.ec.R;
 import com.toplyh.latte.ec.R2;
+import com.toplyh.latte.ui.launcher.ScrollLauncherTag;
 
 import java.text.MessageFormat;
 import java.util.Timer;

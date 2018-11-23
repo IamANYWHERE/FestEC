@@ -15,16 +15,11 @@ import android.widget.Toast;
 import com.joanzapata.iconify.widget.IconTextView;
 import com.toplyh.latte.core.app.Latte;
 import com.toplyh.latte.core.delegates.bottom.BottomItemDelegate;
-import com.toplyh.latte.core.net.RestClient;
-import com.toplyh.latte.core.net.callback.ISuccess;
-import com.toplyh.latte.core.ui.recycler.BaseDecoration;
-import com.toplyh.latte.core.ui.recycler.MultipleFields;
-import com.toplyh.latte.core.ui.recycler.MultipleItemEntity;
-import com.toplyh.latte.core.ui.refresh.RefreshHandler;
-import com.toplyh.latte.core.util.log.LatteLogger;
 import com.toplyh.latte.ec.R;
 import com.toplyh.latte.ec.R2;
 import com.toplyh.latte.ec.main.EcBottomDelegate;
+import com.toplyh.latte.ui.recycler.BaseDecoration;
+import com.toplyh.latte.ui.refresh.RefreshHandler;
 
 import java.util.ArrayList;
 

@@ -1,14 +1,13 @@
 package com.toplyh.latte.core.delegates.web.client;
 
 import android.graphics.Bitmap;
-import android.os.Handler;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.toplyh.latte.core.app.Latte;
 import com.toplyh.latte.core.delegates.IPageLoadListener;
 import com.toplyh.latte.core.delegates.web.WebDelegate;
 import com.toplyh.latte.core.delegates.web.route.Router;
+
 import com.toplyh.latte.core.ui.loader.LatteLoader;
 import com.toplyh.latte.core.util.log.LatteLogger;
 

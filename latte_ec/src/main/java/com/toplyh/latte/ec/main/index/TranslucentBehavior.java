@@ -11,10 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.toplyh.latte.core.app.Latte;
-import com.toplyh.latte.core.ui.recycler.RgbValue;
-import com.toplyh.latte.core.util.log.LatteLogger;
 import com.toplyh.latte.ec.R;
+import com.toplyh.latte.ui.recycler.RgbValue;
 
 public class TranslucentBehavior extends CoordinatorLayout.Behavior<Toolbar> {
 

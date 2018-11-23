@@ -9,10 +9,10 @@ import android.view.View;
 import com.toplyh.latte.core.delegates.LatteDelegate;
 import com.toplyh.latte.core.net.RestClient;
 import com.toplyh.latte.core.net.callback.ISuccess;
-import com.toplyh.latte.core.ui.recycler.MultipleItemEntity;
 import com.toplyh.latte.ec.R;
 import com.toplyh.latte.ec.R2;
 import com.toplyh.latte.ec.main.sort.SortDelegate;
+import com.toplyh.latte.ui.recycler.MultipleItemEntity;
 
 import java.util.List;
 

@@ -6,10 +6,10 @@ import android.view.View;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
-import com.toplyh.latte.core.ui.launcher.LauncherHolderCreator;
-import com.toplyh.latte.core.ui.launcher.ScrollLauncherTag;
 import com.toplyh.latte.core.util.storage.LattePreference;
 import com.toplyh.latte.ec.R;
+import com.toplyh.latte.ui.launcher.LauncherHolderCreator;
+import com.toplyh.latte.ui.launcher.ScrollLauncherTag;
 
 import java.util.ArrayList;
 

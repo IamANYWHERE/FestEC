@@ -1,4 +1,4 @@
-package com.toplyh.latte.core.ui.recycler;
+package com.toplyh.latte.ui.recycler;
 
 /**
  * 用static final的占用的内存要比枚举类少，但是枚举类使得代码更工整

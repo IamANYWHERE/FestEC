@@ -1,12 +1,10 @@
-package com.toplyh.latte.core.ui.recycler;
+package com.toplyh.latte.ui.recycler;
 
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
-import java.lang.ref.WeakReference;
 import java.util.LinkedHashMap;
-import java.util.Map;
 
 /**
  * 这种类型的entity可以被当作多种类型的entity使用

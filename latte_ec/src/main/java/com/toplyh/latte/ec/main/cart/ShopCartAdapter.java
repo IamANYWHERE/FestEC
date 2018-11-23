@@ -9,12 +9,12 @@ import android.view.View;
 import com.joanzapata.iconify.widget.IconTextView;
 import com.toplyh.latte.core.app.Latte;
 import com.toplyh.latte.core.image.ImageHelper;
-import com.toplyh.latte.core.ui.recycler.MultipleFields;
-import com.toplyh.latte.core.ui.recycler.MultipleItemEntity;
-import com.toplyh.latte.core.ui.recycler.MultipleRecyclerAdapter;
-import com.toplyh.latte.core.ui.recycler.MultipleViewHolder;
 import com.toplyh.latte.core.util.format.PriceFormat;
 import com.toplyh.latte.ec.R;
+import com.toplyh.latte.ui.recycler.MultipleFields;
+import com.toplyh.latte.ui.recycler.MultipleItemEntity;
+import com.toplyh.latte.ui.recycler.MultipleRecyclerAdapter;
+import com.toplyh.latte.ui.recycler.MultipleViewHolder;
 
 import java.util.List;
 

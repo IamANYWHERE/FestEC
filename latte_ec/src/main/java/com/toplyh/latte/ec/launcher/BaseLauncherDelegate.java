@@ -5,7 +5,8 @@ import android.app.Activity;
 import com.toplyh.latte.core.app.AccountManager;
 import com.toplyh.latte.core.app.IUserChecker;
 import com.toplyh.latte.core.delegates.LatteDelegate;
-import com.toplyh.latte.core.ui.launcher.ILauncherListener;
+import com.toplyh.latte.ui.launcher.ILauncherListener;
+
 
 public abstract class BaseLauncherDelegate extends LatteDelegate {
 

@@ -3,7 +3,6 @@ package com.toplyh.latte.ec.main.sort.content;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.toplyh.latte.core.ui.recycler.DataConverter;
 
 import java.util.ArrayList;
 import java.util.List;

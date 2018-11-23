@@ -1,4 +1,4 @@
-package com.toplyh.latte.core.ui.recycler;
+package com.toplyh.latte.ui.recycler;
 
 public class ItemType {
     public static final int TEXT = 1;

@@ -1,4 +1,4 @@
-package com.toplyh.latte.core.ui.recycler;
+package com.toplyh.latte.ui.recycler;
 
 import java.util.ArrayList;
 

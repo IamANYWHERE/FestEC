@@ -1,24 +1,15 @@
-package com.toplyh.latte.core.ui.banner;
+package com.toplyh.latte.ui.launcher;
 
-import android.content.Context;
 import android.view.View;
 
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.holder.Holder;
 import com.toplyh.latte.core.R;
 
-import java.lang.ref.WeakReference;
-
-public class HolderCreator implements CBViewHolderCreator {
-
-    private Context mContext = null;
-
-    public HolderCreator(Context context){
-        mContext = context;
-    }
+public class LauncherHolderCreator implements CBViewHolderCreator {
     @Override
     public Holder createHolder(View itemView) {
-        return new ImageHolder(itemView,mContext);
+        return new LauncherHolder(itemView);
     }
 
     @Override

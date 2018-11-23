@@ -1,4 +1,4 @@
-package com.toplyh.latte.core.ui.launcher;
+package com.toplyh.latte.ui.launcher;
 
 public interface ILauncherListener {
 

@@ -1,4 +1,4 @@
-package com.toplyh.latte.core.ui.refresh;
+package com.toplyh.latte.ui.refresh;
 
 public class PagingBean {
     //当前是第几页

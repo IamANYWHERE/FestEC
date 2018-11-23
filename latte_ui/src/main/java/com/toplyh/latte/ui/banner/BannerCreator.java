@@ -1,4 +1,4 @@
-package com.toplyh.latte.core.ui.banner;
+package com.toplyh.latte.ui.banner;
 
 import android.content.Context;
 

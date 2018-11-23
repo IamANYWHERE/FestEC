@@ -9,11 +9,11 @@ import com.toplyh.latte.annotations.AppRegisterGenerator;
 import com.toplyh.latte.core.activities.ProxyActivity;
 import com.toplyh.latte.core.app.Latte;
 import com.toplyh.latte.core.delegates.LatteDelegate;
-import com.toplyh.latte.core.ui.launcher.ILauncherListener;
 import com.toplyh.latte.ec.launcher.LauncherDelegate;
 import com.toplyh.latte.ec.main.EcBottomDelegate;
 import com.toplyh.latte.ec.sign.ISignListener;
 import com.toplyh.latte.ec.sign.SignInDelegate;
+import com.toplyh.latte.ui.launcher.ILauncherListener;
 
 import java.lang.annotation.Annotation;
 

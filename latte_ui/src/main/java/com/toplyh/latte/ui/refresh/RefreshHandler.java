@@ -1,17 +1,18 @@
-package com.toplyh.latte.core.ui.refresh;
+package com.toplyh.latte.ui.refresh;
 
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+
 import com.toplyh.latte.core.app.Latte;
 import com.toplyh.latte.core.net.RestClient;
 import com.toplyh.latte.core.net.callback.ISuccess;
-import com.toplyh.latte.core.ui.recycler.DataConverter;
-import com.toplyh.latte.core.ui.recycler.MultipleRecyclerAdapter;
+import com.toplyh.latte.ui.recycler.DataConverter;
+import com.toplyh.latte.ui.recycler.MultipleRecyclerAdapter;
+
 
 public class RefreshHandler implements SwipeRefreshLayout.OnRefreshListener,
         BaseQuickAdapter.RequestLoadMoreListener {

@@ -1,7 +1,6 @@
-package com.toplyh.latte.core.ui.launcher;
+package com.toplyh.latte.ui.launcher;
 
 import android.support.v7.widget.AppCompatImageView;
-import android.util.Log;
 import android.view.View;
 
 import com.bigkoo.convenientbanner.holder.Holder;

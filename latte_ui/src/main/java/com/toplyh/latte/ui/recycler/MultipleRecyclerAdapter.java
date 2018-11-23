@@ -1,4 +1,4 @@
-package com.toplyh.latte.core.ui.recycler;
+package com.toplyh.latte.ui.recycler;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
@@ -6,15 +6,11 @@ import android.widget.ImageView;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.toplyh.latte.core.R;
-import com.toplyh.latte.core.image.GlideApp;
 import com.toplyh.latte.core.image.ImageHelper;
-import com.toplyh.latte.core.ui.banner.BannerCreator;
-import com.toplyh.latte.core.util.log.LatteLogger;
+import com.toplyh.latte.ui.banner.BannerCreator;
 
 import java.util.ArrayList;
 import java.util.List;
