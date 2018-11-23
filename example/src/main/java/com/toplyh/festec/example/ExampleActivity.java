@@ -42,25 +42,25 @@ public class ExampleActivity extends ProxyActivity implements
     @Override
     public void onSignInSuccess() {
         //Toast.makeText(this, "登录成功", Toast.LENGTH_LONG).show();
-        startWithPop(new EcBottomDelegate());
+        getSupportDelegate().startWithPop(new EcBottomDelegate());
     }
 
     @Override
     public void onSignUpSuccess() {
         //Toast.makeText(this, "注册成功", Toast.LENGTH_LONG).show();
-        startWithPop(new EcBottomDelegate());
+        getSupportDelegate().startWithPop(new EcBottomDelegate());
     }
 
 
     @Override
     public void onSigned() {
         //Toast.makeText(this, "启动结束，用户登录了", Toast.LENGTH_LONG).show();
-        startWithPop(new EcBottomDelegate());
+        getSupportDelegate().startWithPop(new EcBottomDelegate());
     }
 
     @Override
     public void onNotSigned() {
         //Toast.makeText(this, "启动结束，用户没登录", Toast.LENGTH_LONG).show();
-        startWithPop(new SignInDelegate());
+        getSupportDelegate().startWithPop(new SignInDelegate());
     }
 }

@@ -4,9 +4,8 @@ import android.app.Application;
 
 import com.facebook.stetho.Stetho;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
-import com.orhanobut.logger.AndroidLogAdapter;
-import com.orhanobut.logger.Logger;
 import com.toplyh.latte.core.app.Latte;
+import com.toplyh.festec.example.event.TestEvent;
 import com.toplyh.latte.core.net.interceptors.DebugInterceptor;
 import com.toplyh.latte.ec.database.DatabaseManager;
 import com.toplyh.latte.ec.icon.FontEcModule;
@@ -21,10 +20,12 @@ public class ExampleApp extends Application {
                 .withIcon(new FontEcModule())
                 .withApiHost("http://mock.fulingjie.com/mock/data/")
                 .withInterceptor(new DebugInterceptor("index",R.raw.test))
-                .withAppId("")
-                .withAppSecret("")
+                .withAppId("wx7965b4ad729aadf9")
+                .withAppSecret("ac8727d9e4b6c0a205cad213028f5574")
+                .withJavascriptInterface("latte")
+                .withWebEvent("test",new TestEvent())
                 .configure();
-        initStetho();
+        //initStetho();
         DatabaseManager.getInstance().init(this);
     }
 

@@ -15,5 +15,6 @@ public enum ConfigKeys {
     INTERCEPTOR,
     WE_CHAT_APP_ID,
     WE_CHAT_APP_SECRET,
-    ACTIVITY
+    ACTIVITY,
+    JAVASCRIPT_INTERFACE
 }

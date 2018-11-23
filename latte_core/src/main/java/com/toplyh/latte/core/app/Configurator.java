@@ -1,11 +1,14 @@
 package com.toplyh.latte.core.app;
 
 import android.app.Activity;
+import android.support.annotation.NonNull;
 
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
+import com.toplyh.latte.core.delegates.web.event.Event;
+import com.toplyh.latte.core.delegates.web.event.EventManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -76,31 +79,42 @@ public final class Configurator {
         return this;
     }
 
-    public final Configurator withInterceptor(Interceptor interceptor){
+    public final Configurator withInterceptor(Interceptor interceptor) {
         INTERCEPTORS.add(interceptor);
-        LATTE_CONFIGS.put(ConfigKeys.INTERCEPTOR,INTERCEPTORS);
+        LATTE_CONFIGS.put(ConfigKeys.INTERCEPTOR, INTERCEPTORS);
         return this;
     }
 
 
-    public final Configurator withInterceptor(ArrayList<Interceptor> interceptors){
+    public final Configurator withInterceptor(ArrayList<Interceptor> interceptors) {
         INTERCEPTORS.addAll(interceptors);
-        LATTE_CONFIGS.put(ConfigKeys.INTERCEPTOR,INTERCEPTORS);
+        LATTE_CONFIGS.put(ConfigKeys.INTERCEPTOR, INTERCEPTORS);
         return this;
     }
 
-    public final Configurator withAppId(String appId){
-        LATTE_CONFIGS.put(ConfigKeys.WE_CHAT_APP_ID,appId);
+    public final Configurator withAppId(String appId) {
+        LATTE_CONFIGS.put(ConfigKeys.WE_CHAT_APP_ID, appId);
         return this;
     }
 
-    public final Configurator withAppSecret(String appSecret){
-        LATTE_CONFIGS.put(ConfigKeys.WE_CHAT_APP_SECRET,appSecret);
+    public final Configurator withAppSecret(String appSecret) {
+        LATTE_CONFIGS.put(ConfigKeys.WE_CHAT_APP_SECRET, appSecret);
         return this;
     }
 
-    public final Configurator withActivity(Activity activity){
-        LATTE_CONFIGS.put(ConfigKeys.ACTIVITY,activity);
+    public final Configurator withActivity(Activity activity) {
+        LATTE_CONFIGS.put(ConfigKeys.ACTIVITY, activity);
+        return this;
+    }
+
+    public final Configurator withJavascriptInterface(@NonNull String name) {
+        LATTE_CONFIGS.put(ConfigKeys.JAVASCRIPT_INTERFACE, name);
+        return this;
+    }
+
+    public final Configurator withWebEvent(@NonNull String name, @NonNull Event event){
+        final EventManager manager = EventManager.getInstance();
+        manager.addEvent(name,event);
         return this;
     }
 

@@ -108,8 +108,8 @@ public abstract class BaseBottomDelegate extends LatteDelegate implements View.O
             }
         }
 
-        final SupportFragment[] delegateArray = ITEM_DELEGATES.toArray(new SupportFragment[size]);
-        loadMultipleRootFragment(R.id.bottom_bar_delegate_container, mIndexDelegate, delegateArray);
+        final LatteDelegate[] delegateArray = ITEM_DELEGATES.toArray(new LatteDelegate[size]);
+        getSupportDelegate().loadMultipleRootFragment(R.id.bottom_bar_delegate_container, mIndexDelegate, delegateArray);
     }
 
     private void resetColor() {
@@ -132,7 +132,7 @@ public abstract class BaseBottomDelegate extends LatteDelegate implements View.O
         final TextView itemText = (TextView) item.getChildAt(1);
         itemIcon.setTextColor(mClickedColor);
         itemText.setTextColor(mClickedColor);
-        showHideFragment(ITEM_DELEGATES.get(tag), ITEM_DELEGATES.get(mCurrentDelegate));
+        getSupportDelegate().showHideFragment(ITEM_DELEGATES.get(tag), ITEM_DELEGATES.get(mCurrentDelegate));
         //注意先后顺序
         mCurrentDelegate = tag;
     }
