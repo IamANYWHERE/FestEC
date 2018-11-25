@@ -21,7 +21,7 @@ public class ExampleApp extends Application {
                 .withApiHost("http://mock.fulingjie.com/mock/data/")
                 .withInterceptor(new DebugInterceptor("index",R.raw.test))
                 .withAppId("wx7965b4ad729aadf9")
-                .withAppSecret("ac8727d9e4b6c0a205cad213028f5574")
+                .withAppSecret("9f278ff963aa9b5a908cb2dbfb88b884")
                 .withJavascriptInterface("latte")
                 .withWebEvent("test",new TestEvent())
                 .configure();

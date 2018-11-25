@@ -17,8 +17,11 @@ import com.toplyh.latte.core.delegates.bottom.BottomItemDelegate;
 import com.toplyh.latte.core.net.RestClient;
 import com.toplyh.latte.core.net.callback.ISuccess;
 import com.toplyh.latte.core.util.format.PriceFormat;
+import com.toplyh.latte.core.util.log.LatteLogger;
 import com.toplyh.latte.ec.R;
 import com.toplyh.latte.ec.R2;
+import com.toplyh.latte.ec.pay.FastPay;
+import com.toplyh.latte.ec.pay.IAlPayResultListener;
 import com.toplyh.latte.ui.recycler.MultipleItemEntity;
 
 import java.util.ArrayList;
@@ -32,7 +35,8 @@ import butterknife.OnClick;
 public class ShopCartDelegate extends BottomItemDelegate implements
         ISuccess,
         IShopItemStateListener,
-        ICartItemPriceListener {
+        ICartItemPriceListener,
+        IAlPayResultListener {
 
     @BindView(R2.id.rv_shop_cart)
     RecyclerView mRecyclerView = null;
@@ -91,6 +95,7 @@ public class ShopCartDelegate extends BottomItemDelegate implements
             mAdapter.remove(realPosition);
         }
         checkItemCount();
+        mAdapter.updateTotalPrice();
     }
 
     @OnClick(R2.id.tv_top_shop_cart_clear)
@@ -100,11 +105,12 @@ public class ShopCartDelegate extends BottomItemDelegate implements
         mAdapter.setIsSelectedAll(false);
         setIconSelectState(false);
         checkItemCount();
+        mAdapter.updateTotalPrice();
     }
 
     @OnClick(R2.id.tv_shop_cart_pay)
     void onClickPay(){
-
+        createOrder();
     }
 
     //创建订单、注意和支付是没有关系的
@@ -126,6 +132,12 @@ public class ShopCartDelegate extends BottomItemDelegate implements
                     @Override
                     public void onSuccess(String response) {
                         //进行一个支付的过程
+                        LatteLogger.d("ORDER",response);
+                        final int orderId = 1;
+                        FastPay.create(ShopCartDelegate.this)
+                                .setPayResultListener(ShopCartDelegate.this)
+                                .setOrderId(orderId)
+                                .beginPayDialog();
                     }
                 })
                 .build()
@@ -253,5 +265,30 @@ public class ShopCartDelegate extends BottomItemDelegate implements
     public void onItemChange(double itemTotalPrice) {
         final double price = mAdapter.getTotalPrice();
         mTvTotalPrice.setText(PriceFormat.formatPrice(price));
+    }
+
+    @Override
+    public void onPaySuccess() {
+
+    }
+
+    @Override
+    public void onPaying() {
+
+    }
+
+    @Override
+    public void onPayFail() {
+
+    }
+
+    @Override
+    public void onPayCancel() {
+
+    }
+
+    @Override
+    public void onPayConnectError() {
+
     }
 }

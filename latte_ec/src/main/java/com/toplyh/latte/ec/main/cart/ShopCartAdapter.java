@@ -29,12 +29,7 @@ public class ShopCartAdapter extends MultipleRecyclerAdapter {
     protected ShopCartAdapter(List<MultipleItemEntity> data) {
         super(data);
         //初始化总价
-        for (MultipleItemEntity entity : data) {
-            final double price = entity.getField(ShopCartItemFields.PRICE);
-            final int count = entity.getField(ShopCartItemFields.COUNT);
-            final double total = price * count;
-            mTotalPrice += total;
-        }
+        updateTotalPrice();
         //添加添加购物车item布局
         addItemType(ShopCartItemType.SHOP_CART_ITEM, R.layout.item_shop_cart);
         openLoadAnimation(ALPHAIN);
@@ -42,6 +37,20 @@ public class ShopCartAdapter extends MultipleRecyclerAdapter {
 
     public double getTotalPrice() {
         return mTotalPrice;
+    }
+
+    public void updateTotalPrice() {
+        final List<MultipleItemEntity> data = getData();
+        mTotalPrice = 0;
+        for (MultipleItemEntity entity : data) {
+            final double price = entity.getField(ShopCartItemFields.PRICE);
+            final int count = entity.getField(ShopCartItemFields.COUNT);
+            final double total = price * count;
+            mTotalPrice += total;
+        }
+        if (mCartItemPriceListener != null) {
+            mCartItemPriceListener.onItemChange(0);
+        }
     }
 
     public void setShopItemStateListener(IShopItemStateListener listener) {
@@ -64,6 +73,7 @@ public class ShopCartAdapter extends MultipleRecyclerAdapter {
             entity.setField(ShopCartItemFields.IS_SELECTED, mIsSelectedAll);
         }
     }
+
 
     @Override
     protected void convert(MultipleViewHolder holder, final MultipleItemEntity item) {

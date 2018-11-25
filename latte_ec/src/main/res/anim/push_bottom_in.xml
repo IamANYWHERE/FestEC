@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--fromYDelta 数值类型(数值、百分数、百分数p),50表示50px，
+    50%表示当前View的左上角加上当前View宽高的50%作为初始点、
+    50%p表示当前View的左上角加上父控件宽高的50%作为初始点-->
+    <!--0表示原始位置-->
+    <translate
+        android:duration="300"
+        android:fromYDelta="100%p"
+        android:toYDelta="0" />
+    <alpha
+        android:duration="300"
+        android:fromYDelta="0"
+        android:toYDelta="1.0" />
+</set>

@@ -2,7 +2,9 @@ package com.toplyh.latte.ec.detail;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import com.toplyh.latte.core.delegates.LatteDelegate;
 import com.toplyh.latte.ec.R;
@@ -26,4 +28,9 @@ public class GoodsDetailDelegate extends LatteDelegate {
 
     }
 
+    @Override
+    public boolean onBackPressedSupport() {
+        pop();
+        return true;
+    }
 }

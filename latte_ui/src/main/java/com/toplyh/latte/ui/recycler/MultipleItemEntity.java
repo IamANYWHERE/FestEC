@@ -13,9 +13,9 @@ import java.util.LinkedHashMap;
 public class MultipleItemEntity implements MultiItemEntity {
     //在recyclerview中数据太过于庞大的时，很可能造成内存溢出，所以这里使用SoftReference或者WeakReference，当内存不够时进行释放
     private final ReferenceQueue<LinkedHashMap<Object,Object>> ITEM_QUEUE = new ReferenceQueue<>();
-    //private LinkedHashMap<Object,Object> MULTIPLE_FIELDS = new LinkedHashMap<>();
+    private LinkedHashMap<Object,Object> MULTIPLE_FIELDS = new LinkedHashMap<>();
     private final SoftReference<LinkedHashMap<Object,Object>> FIELDS_REFERENCE =
-            new SoftReference<>(new LinkedHashMap<Object, Object>(),ITEM_QUEUE);
+            new SoftReference<>(MULTIPLE_FIELDS,ITEM_QUEUE);
 
 
     public static MultipleItemEntityBuilder builder(){
@@ -26,7 +26,6 @@ public class MultipleItemEntity implements MultiItemEntity {
     //初始化顺序排序，在构造函数的初始化会被放到构造函数的最后
     MultipleItemEntity(LinkedHashMap<Object,Object> fields) {
         FIELDS_REFERENCE.get().putAll(fields);
-        //MULTIPLE_FIELDS = null;
     }
 
     @Override

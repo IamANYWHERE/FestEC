@@ -1,11 +1,13 @@
 package com.toplyh.latte.core.util.format;
 
-import java.text.DecimalFormat;
+
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class PriceFormat {
 
-    public static final String formatPrice(double price){
-        final DecimalFormat df = new DecimalFormat("#.00");
-        return df.format(price);
+    public static String formatPrice(double price){
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(Locale.CHINA);
+        return formatter.format(price);
     }
 }

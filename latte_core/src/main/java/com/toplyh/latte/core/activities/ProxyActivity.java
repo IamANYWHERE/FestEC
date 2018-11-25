@@ -73,12 +73,12 @@ public abstract class ProxyActivity extends AppCompatActivity implements ISuppor
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        DELEGATE.onBackPressed();
     }
 
     @Override
     public void onBackPressedSupport() {
-        DELEGATE.onBackPressedSupport();
+
     }
 
     @Override

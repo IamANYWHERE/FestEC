@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1111"
@@ -115,17 +116,18 @@
             <android.support.v7.widget.AppCompatTextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:text="合计"
                 android:textColor="@android:color/darker_gray"
                 tools:ignore="HardcodedText" />
 
             <android.support.v7.widget.AppCompatTextView
+                app:autoSizeTextType="uniform"
                 android:id="@+id/tv_shop_cart_total_price"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:gravity="center|left"
                 android:text="$0.01"
                 android:textColor="@color/app_main"

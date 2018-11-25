@@ -33,4 +33,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
     api project(':latte_ui')
+    implementation files('libs/alipaySdk-20180601.jar')
 }

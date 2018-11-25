@@ -6,7 +6,7 @@ android {
 
 
     defaultConfig {
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -39,5 +39,7 @@ dependencies {
     api 'com.choices.divider:RecyclerView_Divider:1.0.0'
     //BaseRecyclerViewAdapterHelper依赖
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.42'
+    //CircleImage依赖
+    api 'de.hdodenhof:circleimageview:2.2.0'
     api project(':latte_core')
 }
