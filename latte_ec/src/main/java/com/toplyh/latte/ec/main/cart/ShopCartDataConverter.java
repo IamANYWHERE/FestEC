@@ -13,7 +13,6 @@ import java.util.ArrayList;
 public class ShopCartDataConverter extends DataConverter {
     @Override
     public ArrayList<MultipleItemEntity> convert() {
-        final ArrayList<MultipleItemEntity> dataList = new ArrayList<>();
         final JSONArray dataArray = JSON.parseObject(getJsonData()).getJSONArray("data");
 
         final int size = dataArray.size();
@@ -38,9 +37,9 @@ public class ShopCartDataConverter extends DataConverter {
                     .setField(ShopCartItemFields.POSITION,i)
                     .build();
 
-            dataList.add(entity);
+            ENTITIES.add(entity);
 
         }
-        return dataList;
+        return ENTITIES;
     }
 }

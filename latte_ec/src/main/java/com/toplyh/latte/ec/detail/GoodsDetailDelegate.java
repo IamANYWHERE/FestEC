@@ -29,8 +29,7 @@ public class GoodsDetailDelegate extends LatteDelegate {
     }
 
     @Override
-    public boolean onBackPressedSupport() {
-        pop();
-        return true;
+    public FragmentAnimator onCreateFragmentAnimator() {
+        return new DefaultHorizontalAnimator();
     }
 }

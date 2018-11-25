@@ -12,24 +12,69 @@ import com.toplyh.latte.ec.R2;
 import com.toplyh.latte.ec.main.personal.list.ListAdapter;
 import com.toplyh.latte.ec.main.personal.list.ListBean;
 import com.toplyh.latte.ec.main.personal.list.PersonalListItemType;
+import com.toplyh.latte.ec.main.personal.order.OrderListDelegate;
+import com.toplyh.latte.ec.main.personal.order.OrderType;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class PersonalDelegate extends BottomItemDelegate {
 
+    public static final String ORDER_TYPE = "ORDER_TYPE";
+    private Bundle mArgs = null;
 
     @BindView(R2.id.rv_personal_setting)
     RecyclerView mRecyclerView = null;
 
+    @OnClick(R2.id.tv_all_order)
+    void onClickAllOrder(){
+        mArgs.putString(ORDER_TYPE,OrderType.ORDER_ALL.name());
+        startOrderListByType();
+    }
+
+    @OnClick(R2.id.ll_pay)
+    void onClickPendingPayment(){
+        mArgs.putString(ORDER_TYPE,OrderType.ORDER_PENDING_PAYMENT.name());
+        startOrderListByType();
+    }
+
+    @OnClick(R2.id.ll_receive)
+    void onClickPendReceipt(){
+        mArgs.putString(ORDER_TYPE,OrderType.ORDER_PENDING_RECEIPT.name());
+        startOrderListByType();
+    }
+
+    @OnClick(R2.id.ll_evaluate)
+    void onClickPendEvaluation(){
+        mArgs.putString(ORDER_TYPE,OrderType.ORDER_PENDING_EVALUATION.name());
+        startOrderListByType();
+    }
+
+    @OnClick(R2.id.ll_after_market)
+    void onClickAfterSale(){
+        mArgs.putString(ORDER_TYPE,OrderType.ORDER_AFTER_SALE.name());
+        startOrderListByType();
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mArgs = new Bundle();
+    }
 
     @Override
     public Object setLayout() {
         return R.layout.delegate_personal;
     }
 
+    private void startOrderListByType(){
+        final OrderListDelegate delegate = new OrderListDelegate();
+        delegate.setArguments(mArgs);
+        getParentDelegate().start(delegate);
+    }
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
     }

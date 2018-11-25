@@ -13,8 +13,6 @@ import java.util.ArrayList;
 public final class VerticalListDataConverter extends DataConverter {
     @Override
     public ArrayList<MultipleItemEntity> convert() {
-
-        final ArrayList<MultipleItemEntity> dataList = new ArrayList<>();
         final JSONArray dataArray = JSON.parseObject(getJsonData())
                 .getJSONObject("data")
                 .getJSONArray("list");
@@ -31,10 +29,10 @@ public final class VerticalListDataConverter extends DataConverter {
                     .setField(MultipleFields.TAG, false)
                     .build();
 
-            dataList.add(entity);
+            ENTITIES.add(entity);
             //设置第一个被选中
-            dataList.get(0).setField(MultipleFields.TAG, true);
+            ENTITIES.get(0).setField(MultipleFields.TAG, true);
         }
-        return dataList;
+        return ENTITIES;
     }
 }
