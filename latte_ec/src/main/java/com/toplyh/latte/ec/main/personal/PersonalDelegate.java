@@ -8,9 +8,9 @@ import android.view.View;
 
 import com.toplyh.latte.core.delegates.bottom.BottomItemDelegate;
 import com.toplyh.latte.core.image.ImageHelper;
-import com.toplyh.latte.core.net.RestClient;
 import com.toplyh.latte.ec.R;
 import com.toplyh.latte.ec.R2;
+import com.toplyh.latte.ec.main.personal.address.AddressDelegate;
 import com.toplyh.latte.ec.main.personal.list.ListAdapter;
 import com.toplyh.latte.ec.main.personal.list.ListBean;
 import com.toplyh.latte.ec.main.personal.list.PersonalListItemType;
@@ -37,37 +37,37 @@ public class PersonalDelegate extends BottomItemDelegate {
     CircleImageView mAvatar;
 
     @OnClick(R2.id.tv_all_order)
-    void onClickAllOrder(){
-        mArgs.putString(ORDER_TYPE,OrderType.ORDER_ALL.name());
+    void onClickAllOrder() {
+        mArgs.putString(ORDER_TYPE, OrderType.ORDER_ALL.name());
         startOrderListByType();
     }
 
     @OnClick(R2.id.ll_pay)
-    void onClickPendingPayment(){
-        mArgs.putString(ORDER_TYPE,OrderType.ORDER_PENDING_PAYMENT.name());
+    void onClickPendingPayment() {
+        mArgs.putString(ORDER_TYPE, OrderType.ORDER_PENDING_PAYMENT.name());
         startOrderListByType();
     }
 
     @OnClick(R2.id.ll_receive)
-    void onClickPendReceipt(){
-        mArgs.putString(ORDER_TYPE,OrderType.ORDER_PENDING_RECEIPT.name());
+    void onClickPendReceipt() {
+        mArgs.putString(ORDER_TYPE, OrderType.ORDER_PENDING_RECEIPT.name());
         startOrderListByType();
     }
 
     @OnClick(R2.id.ll_evaluate)
-    void onClickPendEvaluation(){
-        mArgs.putString(ORDER_TYPE,OrderType.ORDER_PENDING_EVALUATION.name());
+    void onClickPendEvaluation() {
+        mArgs.putString(ORDER_TYPE, OrderType.ORDER_PENDING_EVALUATION.name());
         startOrderListByType();
     }
 
     @OnClick(R2.id.ll_after_market)
-    void onClickAfterSale(){
-        mArgs.putString(ORDER_TYPE,OrderType.ORDER_AFTER_SALE.name());
+    void onClickAfterSale() {
+        mArgs.putString(ORDER_TYPE, OrderType.ORDER_AFTER_SALE.name());
         startOrderListByType();
     }
 
     @OnClick(R2.id.img_user_avatar)
-    void onClickAvatar(){
+    void onClickAvatar() {
         getParentDelegate().start(new UserProfileDelegate());
     }
 
@@ -82,11 +82,12 @@ public class PersonalDelegate extends BottomItemDelegate {
         return R.layout.delegate_personal;
     }
 
-    private void startOrderListByType(){
+    private void startOrderListByType() {
         final OrderListDelegate delegate = new OrderListDelegate();
         delegate.setArguments(mArgs);
         getParentDelegate().start(delegate);
     }
+
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
     }
@@ -97,6 +98,7 @@ public class PersonalDelegate extends BottomItemDelegate {
         final ListBean address = new ListBean.Builder()
                 .setItemType(PersonalListItemType.ARROW_ITEM_LAYOUT)
                 .setId(1)
+                .setDelegate(new AddressDelegate())
                 .setText("收货地址")
                 .build();
         final ListBean system = new ListBean.Builder()
@@ -114,7 +116,8 @@ public class PersonalDelegate extends BottomItemDelegate {
         mRecyclerView.setLayoutManager(manager);
         final ListAdapter adapter = new ListAdapter(data);
         mRecyclerView.setAdapter(adapter);
+        mRecyclerView.addOnItemTouchListener(new PersonalOnClickListener(this));
 
-        ImageHelper.LoadCacheAll(getContext(),"http://toplyh.oss-cn-hongkong.aliyuncs.com/FestEC/avatar.jpg",mAvatar);
+        ImageHelper.LoadCacheAll(getContext(), "http://toplyh.oss-cn-hongkong.aliyuncs.com/FestEC/avatar.jpg", mAvatar);
     }
 }

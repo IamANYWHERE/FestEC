@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,13 +29,15 @@ import com.toplyh.latte.ec.main.personal.list.ListBean;
 import com.toplyh.latte.ec.main.personal.settings.NameDelegate;
 import com.toplyh.latte.ui.date.DateDialogUtil;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class UserProfileClickListener extends SimpleClickListener {
 
     private final LatteDelegate DELEGATE;
 
     private String[] mGenders = new String[]{"男", "女", "保密"};
 
-    public UserProfileClickListener(LatteDelegate delegate) {
+    UserProfileClickListener(LatteDelegate delegate) {
         DELEGATE = delegate;
     }
 
@@ -48,6 +51,9 @@ public class UserProfileClickListener extends SimpleClickListener {
                     @Override
                     public void execute(Object args) {
                         Uri uri = (Uri) args;
+                        final CircleImageView avatar = view.findViewById(R.id.img_arrow_avatar);
+                        ImageHelper.LoadCacheAll(DELEGATE.getContext(),uri.getPath(),avatar);
+                        //如果存储在自己的服务器上时，可以上传了之后，再把服务器上和本地用户的avatar信息更新
                         new LatteOSS.Builder()
                                 .loaderStyle(DELEGATE.getContext())
                                 .localFilePath(uri.getPath())
