@@ -7,6 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.toplyh.latte.core.delegates.bottom.BottomItemDelegate;
+import com.toplyh.latte.core.image.ImageHelper;
+import com.toplyh.latte.core.net.RestClient;
 import com.toplyh.latte.ec.R;
 import com.toplyh.latte.ec.R2;
 import com.toplyh.latte.ec.main.personal.list.ListAdapter;
@@ -14,12 +16,14 @@ import com.toplyh.latte.ec.main.personal.list.ListBean;
 import com.toplyh.latte.ec.main.personal.list.PersonalListItemType;
 import com.toplyh.latte.ec.main.personal.order.OrderListDelegate;
 import com.toplyh.latte.ec.main.personal.order.OrderType;
+import com.toplyh.latte.ec.main.personal.profile.UserProfileDelegate;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PersonalDelegate extends BottomItemDelegate {
 
@@ -28,6 +32,9 @@ public class PersonalDelegate extends BottomItemDelegate {
 
     @BindView(R2.id.rv_personal_setting)
     RecyclerView mRecyclerView = null;
+
+    @BindView(R2.id.img_user_avatar)
+    CircleImageView mAvatar;
 
     @OnClick(R2.id.tv_all_order)
     void onClickAllOrder(){
@@ -57,6 +64,11 @@ public class PersonalDelegate extends BottomItemDelegate {
     void onClickAfterSale(){
         mArgs.putString(ORDER_TYPE,OrderType.ORDER_AFTER_SALE.name());
         startOrderListByType();
+    }
+
+    @OnClick(R2.id.img_user_avatar)
+    void onClickAvatar(){
+        getParentDelegate().start(new UserProfileDelegate());
     }
 
     @Override
@@ -102,5 +114,7 @@ public class PersonalDelegate extends BottomItemDelegate {
         mRecyclerView.setLayoutManager(manager);
         final ListAdapter adapter = new ListAdapter(data);
         mRecyclerView.setAdapter(adapter);
+
+        ImageHelper.LoadCacheAll(getContext(),"http://toplyh.oss-cn-hongkong.aliyuncs.com/FestEC/avatar.jpg",mAvatar);
     }
 }

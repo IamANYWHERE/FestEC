@@ -27,6 +27,10 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    configurations {
+        all*.exclude group: 'com.android.support', module: 'support-v13'
+        //或者粗暴点，就没有上面的坑了  all*.exclude module: 'support-v4'
+    }
     //android support包依赖
     api 'com.android.support:appcompat-v7:28.0.0'
     api 'com.android.support:support-v4:28.0.0'
@@ -75,4 +79,15 @@ dependencies {
     //auto-value依赖
     compileOnly 'com.google.auto.value:auto-value-annotations:1.6.2'
     annotationProcessor "com.google.auto.value:auto-value:1.6.2"
+    //图片裁剪
+    api 'com.github.yalantis:ucrop:2.2.2-native'
+    //动态权限
+    //noinspection GradleDependency
+    api "com.github.hotchemi:permissionsdispatcher:3.3.1"
+    //noinspection GradleDependency
+    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:3.3.1"
+    //AndroidUtilCode 依赖
+    api 'com.blankj:utilcode:1.22.0'
+    //阿里云OSS服务
+    api 'com.aliyun.dpa:oss-android-sdk:+'
 }

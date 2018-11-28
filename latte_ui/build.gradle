@@ -26,8 +26,11 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:28.0.0'
     testImplementation 'junit:junit:4.12'
+    configurations {
+        all*.exclude group: 'com.android.support', module: 'support-v13'
+        //或者粗暴点，就没有上面的坑了  all*.exclude module: 'support-v4'
+    }
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //auto-value依赖
@@ -42,4 +45,5 @@ dependencies {
     //CircleImage依赖
     api 'de.hdodenhof:circleimageview:2.2.0'
     api project(':latte_core')
+
 }

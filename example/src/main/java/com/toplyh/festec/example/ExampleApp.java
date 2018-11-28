@@ -24,6 +24,11 @@ public class ExampleApp extends Application {
                 .withAppSecret("9f278ff963aa9b5a908cb2dbfb88b884")
                 .withJavascriptInterface("latte")
                 .withWebEvent("test",new TestEvent())
+                .withOSSEndPoint("oss-cn-hongkong.aliyuncs.com")
+                .withStsServer("http://47.94.12.38:7080/sts")
+                .withBucketName("toplyh")
+                .withUploadDir("FestEC")
+                .withOSSClient(15*1000,15*1000,5,2)
                 .configure();
         //initStetho();
         DatabaseManager.getInstance().init(this);

@@ -1,8 +1,16 @@
 package com.toplyh.latte.core.app;
 
 import android.app.Activity;
+import android.content.Context;
 import android.support.annotation.NonNull;
 
+import com.alibaba.sdk.android.oss.ClientConfiguration;
+import com.alibaba.sdk.android.oss.OSS;
+import com.alibaba.sdk.android.oss.OSSClient;
+import com.alibaba.sdk.android.oss.common.auth.OSSAuthCredentialsProvider;
+import com.alibaba.sdk.android.oss.common.auth.OSSCredentialProvider;
+import com.alibaba.sdk.android.oss.common.auth.OSSStsTokenCredentialProvider;
+import com.blankj.utilcode.util.Utils;
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
 import com.orhanobut.logger.AndroidLogAdapter;
@@ -52,6 +60,7 @@ public final class Configurator {
         initIcons();
         Logger.addLogAdapter(new AndroidLogAdapter());
         LATTE_CONFIGS.put(ConfigKeys.CONFIG_READY, true);
+        Utils.init(Latte.getApplicationContext());
     }
 
     /**
@@ -112,9 +121,44 @@ public final class Configurator {
         return this;
     }
 
-    public final Configurator withWebEvent(@NonNull String name, @NonNull Event event){
+    public final Configurator withWebEvent(@NonNull String name, @NonNull Event event) {
         final EventManager manager = EventManager.getInstance();
-        manager.addEvent(name,event);
+        manager.addEvent(name, event);
+        return this;
+    }
+
+    public final Configurator withOSSEndPoint(String endPoint){
+        LATTE_CONFIGS.put(ConfigKeys.OSS_ENDPOINT,endPoint);
+        return this;
+    }
+
+    public final Configurator withStsServer(String server){
+        LATTE_CONFIGS.put(ConfigKeys.STS_SERVER,server);
+        return this;
+    }
+
+    public final Configurator withBucketName(String bucketName){
+        LATTE_CONFIGS.put(ConfigKeys.BUCKET_NAME,bucketName);
+        return this;
+    }
+
+    public final Configurator withUploadDir(String dirName){
+        LATTE_CONFIGS.put(ConfigKeys.OSS_UPLOAD_DIR,dirName);
+        return this;
+    }
+
+    public final Configurator withOSSClient(int connectionTimeout,int socketTimeout,int maxConcurrentRequest,int maxErrorRetry){
+        final String endPoint = (String) LATTE_CONFIGS.get(ConfigKeys.OSS_ENDPOINT);
+        final String stsServer = (String) LATTE_CONFIGS.get(ConfigKeys.STS_SERVER);
+
+        final OSSCredentialProvider credentialProvider = new OSSAuthCredentialsProvider(stsServer);
+        ClientConfiguration conf = new ClientConfiguration();
+        conf.setConnectionTimeout(connectionTimeout);
+        conf.setSocketTimeout(socketTimeout);
+        conf.setMaxConcurrentRequest(maxConcurrentRequest);
+        conf.setMaxErrorRetry(maxErrorRetry);
+        final OSS oss = new OSSClient((Context) LATTE_CONFIGS.get(ConfigKeys.APPLICATION_CONTEXT),endPoint,credentialProvider);
+        LATTE_CONFIGS.put(ConfigKeys.OSS_CLIENT,oss);
         return this;
     }
 

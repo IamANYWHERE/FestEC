@@ -46,6 +46,6 @@ public final class Latte {
 
 
     public static Context getApplicationContext(){
-        return (Context) getConfigurations().get(ConfigKeys.APPLICATION_CONTEXT);
+        return getConfiguration(ConfigKeys.APPLICATION_CONTEXT);
     }
 }

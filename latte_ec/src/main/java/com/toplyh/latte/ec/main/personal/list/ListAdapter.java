@@ -2,10 +2,13 @@ package com.toplyh.latte.ec.main.personal.list;
 
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.toplyh.latte.core.image.ImageHelper;
 import com.toplyh.latte.core.util.log.LatteLogger;
 import com.toplyh.latte.ec.R;
 
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ListAdapter extends BaseMultiItemQuickAdapter<ListBean, BaseViewHolder> {
 
@@ -24,6 +27,8 @@ public class ListAdapter extends BaseMultiItemQuickAdapter<ListBean, BaseViewHol
                 helper.setText(R.id.tv_arrow_value, item.getValue());
                 break;
             case PersonalListItemType.ARROW_ITEM_AVATAR:
+                final CircleImageView circleImageView = helper.getView(R.id.img_arrow_avatar);
+                ImageHelper.LoadCacheAll(mContext,item.getImageUrl(),circleImageView);
                 break;
             case PersonalListItemType.ARROW_SWITCH_LAYOUT:
                 break;

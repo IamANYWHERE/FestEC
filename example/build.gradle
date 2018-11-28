@@ -28,4 +28,9 @@ dependencies {
     implementation 'com.facebook.stetho:stetho:1.5.0'
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
 
+    configurations {
+        all*.exclude group: 'com.android.support', module: 'support-v13'
+        //或者粗暴点，就没有上面的坑了  all*.exclude module: 'support-v4'
+    }
+
 }
