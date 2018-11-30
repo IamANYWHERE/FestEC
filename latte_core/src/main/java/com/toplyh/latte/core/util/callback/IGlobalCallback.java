@@ -1,5 +1,7 @@
 package com.toplyh.latte.core.util.callback;
 
+import android.support.annotation.Nullable;
+
 public interface IGlobalCallback<T> {
-    void execute(T args);
+    void execute(@Nullable T args);
 }

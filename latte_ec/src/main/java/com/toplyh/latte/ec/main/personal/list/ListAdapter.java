@@ -1,10 +1,14 @@
 package com.toplyh.latte.ec.main.personal.list;
 
+import android.support.v7.widget.SwitchCompat;
+
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.toplyh.latte.core.image.ImageHelper;
 import com.toplyh.latte.core.util.log.LatteLogger;
+import com.toplyh.latte.core.util.storage.LattePreference;
 import com.toplyh.latte.ec.R;
+import com.toplyh.latte.ec.main.personal.settings.SettingsDelegate;
 
 import java.util.List;
 
@@ -31,6 +35,16 @@ public class ListAdapter extends BaseMultiItemQuickAdapter<ListBean, BaseViewHol
                 ImageHelper.LoadCacheAll(mContext,item.getImageUrl(),circleImageView);
                 break;
             case PersonalListItemType.ARROW_SWITCH_LAYOUT:
+                helper.setText(R.id.tv_arrow_switch_text,item.getText());
+                final SwitchCompat switchCompat = helper.getView(R.id.list_item_switch);
+                final boolean ispush;
+                if (LattePreference.isAppFlagStored(SettingsDelegate.PREFERENCE_KEY_PUSH)){
+                    ispush = LattePreference.getAppFlag(SettingsDelegate.PREFERENCE_KEY_PUSH);
+                }else {
+                    ispush = true;
+                }
+                switchCompat.setChecked(ispush);
+                switchCompat.setOnCheckedChangeListener(item.getOnCheckedChangeListener());
                 break;
             default:
                 break;

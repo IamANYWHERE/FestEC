@@ -69,6 +69,11 @@ public final class LattePreference {
                 .getBoolean(key, false);
     }
 
+    public static boolean isAppFlagStored(String key){
+        return getAppPreference()
+                .contains(key);
+    }
+
     public static void addCustomAppProfile(String key, String val) {
         getAppPreference()
                 .edit()

@@ -9,6 +9,10 @@ import com.toplyh.latte.annotations.AppRegisterGenerator;
 import com.toplyh.latte.core.activities.ProxyActivity;
 import com.toplyh.latte.core.app.Latte;
 import com.toplyh.latte.core.delegates.LatteDelegate;
+import com.toplyh.latte.core.util.callback.CallbackManager;
+import com.toplyh.latte.core.util.callback.CallbackType;
+import com.toplyh.latte.core.util.callback.IGlobalCallback;
+import com.toplyh.latte.core.util.log.LatteLogger;
 import com.toplyh.latte.ec.launcher.LauncherDelegate;
 import com.toplyh.latte.ec.main.EcBottomDelegate;
 import com.toplyh.latte.ec.sign.ISignListener;
@@ -17,11 +21,12 @@ import com.toplyh.latte.ui.launcher.ILauncherListener;
 
 import java.lang.annotation.Annotation;
 
+import cn.jpush.android.api.JPushInterface;
 import qiu.niorgai.StatusBarCompat;
 
 public class ExampleActivity extends ProxyActivity implements
         ISignListener,
-        ILauncherListener {
+        ILauncherListener{
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,7 +36,19 @@ public class ExampleActivity extends ProxyActivity implements
             actionBar.hide();
         }
         Latte.getConfigurator().withActivity(this);
-        StatusBarCompat.translucentStatusBar(this,true);
+        StatusBarCompat.translucentStatusBar(this, true);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        JPushInterface.onPause(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        JPushInterface.onResume(this);
     }
 
     @Override
@@ -41,26 +58,22 @@ public class ExampleActivity extends ProxyActivity implements
 
     @Override
     public void onSignInSuccess() {
-        //Toast.makeText(this, "登录成功", Toast.LENGTH_LONG).show();
         getSupportDelegate().startWithPop(new EcBottomDelegate());
     }
 
     @Override
     public void onSignUpSuccess() {
-        //Toast.makeText(this, "注册成功", Toast.LENGTH_LONG).show();
         getSupportDelegate().startWithPop(new EcBottomDelegate());
     }
 
 
     @Override
     public void onSigned() {
-        //Toast.makeText(this, "启动结束，用户登录了", Toast.LENGTH_LONG).show();
         getSupportDelegate().startWithPop(new EcBottomDelegate());
     }
 
     @Override
     public void onNotSigned() {
-        //Toast.makeText(this, "启动结束，用户没登录", Toast.LENGTH_LONG).show();
         getSupportDelegate().startWithPop(new SignInDelegate());
     }
 }

@@ -89,5 +89,6 @@ dependencies {
     //AndroidUtilCode 依赖
     api 'com.blankj:utilcode:1.22.0'
     //阿里云OSS服务
+    //noinspection GradleDynamicVersion
     api 'com.aliyun.dpa:oss-android-sdk:+'
 }

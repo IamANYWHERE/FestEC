@@ -17,6 +17,7 @@ import com.toplyh.latte.ec.main.personal.list.PersonalListItemType;
 import com.toplyh.latte.ec.main.personal.order.OrderListDelegate;
 import com.toplyh.latte.ec.main.personal.order.OrderType;
 import com.toplyh.latte.ec.main.personal.profile.UserProfileDelegate;
+import com.toplyh.latte.ec.main.personal.settings.SettingsDelegate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,6 +105,7 @@ public class PersonalDelegate extends BottomItemDelegate {
         final ListBean system = new ListBean.Builder()
                 .setItemType(PersonalListItemType.ARROW_ITEM_LAYOUT)
                 .setId(2)
+                .setDelegate(new SettingsDelegate())
                 .setText("系统设置")
                 .build();
 
