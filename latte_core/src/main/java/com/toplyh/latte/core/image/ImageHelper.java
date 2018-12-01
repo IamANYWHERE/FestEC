@@ -2,7 +2,9 @@ package com.toplyh.latte.core.image;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.net.Uri;
 import android.support.annotation.IdRes;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -32,6 +34,14 @@ public final class ImageHelper {
         Glide.with(context)
                 .load(url)
                 .apply(REQUEST_OPTIONS)
+                .into(view);
+    }
+
+    public static void LoadNoCache(Fragment fragment, Uri uri, ImageView view){
+        GlideApp.with(fragment)
+                .load(uri)
+                .centerCrop()
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .into(view);
     }
 }

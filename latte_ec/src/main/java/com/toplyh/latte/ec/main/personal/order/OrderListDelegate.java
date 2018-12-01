@@ -2,10 +2,10 @@ package com.toplyh.latte.ec.main.personal.order;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Toast;
 
 import com.toplyh.latte.core.delegates.LatteDelegate;
 import com.toplyh.latte.core.net.RestClient;
@@ -26,7 +26,10 @@ public class OrderListDelegate extends LatteDelegate {
     @BindView(R2.id.rv_order_list)
     RecyclerView mRecyclerView = null;
 
-    private String mType = null;
+    @BindView(R2.id.tv_order_list_tb)
+    AppCompatTextView mTBTextView = null;
+
+    private OrderType mType = null;
 
     @Override
     public Object setLayout() {
@@ -37,7 +40,7 @@ public class OrderListDelegate extends LatteDelegate {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         final Bundle args = getArguments();
-        mType = args.getString(PersonalDelegate.ORDER_TYPE);
+        mType = OrderType.valueOf(args.getString(PersonalDelegate.ORDER_TYPE));
     }
 
     @Override
@@ -48,6 +51,7 @@ public class OrderListDelegate extends LatteDelegate {
     @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
+        setToolbar();
         RestClient.builder()
                 .loader(getContext())
                 .url("order_list.json")
@@ -60,15 +64,32 @@ public class OrderListDelegate extends LatteDelegate {
                         final List<MultipleItemEntity> data = new OderListDataConverter().setJsonData(response).convert();
                         final OrderListAdapter adapter = new OrderListAdapter(data);
                         mRecyclerView.setAdapter(adapter);
+                        mRecyclerView.addOnItemTouchListener(new OrderListClickListener(OrderListDelegate.this));
                     }
                 })
                 .build()
                 .get();
     }
 
-    @Override
-    public FragmentAnimator getFragmentAnimator() {
-        return new DefaultHorizontalAnimator();
+    private void setToolbar() {
+        switch (mType) {
+            case ORDER_ALL:
+                mTBTextView.setText("全部订单");
+                break;
+            case ORDER_PENDING_PAYMENT:
+                mTBTextView.setText("待付款");
+                break;
+            case ORDER_PENDING_RECEIPT:
+                mTBTextView.setText("待收货");
+                break;
+            case ORDER_PENDING_EVALUATION:
+                mTBTextView.setText("待评价");
+                break;
+            case ORDER_AFTER_SALE:
+                mTBTextView.setText("售后");
+            default:
+                break;
+        }
     }
 
     @Override
