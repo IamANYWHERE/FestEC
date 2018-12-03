@@ -91,4 +91,6 @@ dependencies {
     //阿里云OSS服务
     //noinspection GradleDynamicVersion
     api 'com.aliyun.dpa:oss-android-sdk:+'
+    //二维码扫描
+    api 'me.dm7.barcodescanner:zbar:1.9.8'
 }

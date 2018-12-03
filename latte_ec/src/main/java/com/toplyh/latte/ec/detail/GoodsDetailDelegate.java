@@ -9,10 +9,13 @@ import android.widget.Toast;
 import com.toplyh.latte.core.delegates.LatteDelegate;
 import com.toplyh.latte.ec.R;
 
+import butterknife.BindView;
 import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 
 public class GoodsDetailDelegate extends LatteDelegate {
+
+
 
     public static GoodsDetailDelegate create() {
         return new GoodsDetailDelegate();

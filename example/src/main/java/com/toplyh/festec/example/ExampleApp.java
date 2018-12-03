@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 
 import com.facebook.stetho.Stetho;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
+import com.mob.MobSDK;
+import com.toplyh.festec.example.event.ShareEvent;
 import com.toplyh.latte.core.app.Latte;
 import com.toplyh.festec.example.event.TestEvent;
 import com.toplyh.latte.core.net.interceptors.DebugInterceptor;
@@ -30,6 +32,7 @@ public class ExampleApp extends Application {
                 .withAppSecret("9f278ff963aa9b5a908cb2dbfb88b884")
                 .withJavascriptInterface("latte")
                 .withWebEvent("test", new TestEvent())
+                .withWebEvent("share",new ShareEvent())
                 .withOSSEndPoint("oss-cn-hongkong.aliyuncs.com")
                 .withStsServer("http://47.94.12.38:7080/sts")
                 .withBucketName("toplyh")
@@ -57,6 +60,8 @@ public class ExampleApp extends Application {
                         }
                     }
                 });
+        //初始化fMobSDK
+        MobSDK.init(this,"290ef906847f8","4ab91220520821129a7b24fc3b7243bb");
     }
 
     private void initStetho() {

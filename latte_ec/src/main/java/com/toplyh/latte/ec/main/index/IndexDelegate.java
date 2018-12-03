@@ -15,17 +15,22 @@ import android.widget.Toast;
 import com.joanzapata.iconify.widget.IconTextView;
 import com.toplyh.latte.core.app.Latte;
 import com.toplyh.latte.core.delegates.bottom.BottomItemDelegate;
+import com.toplyh.latte.core.util.callback.CallbackManager;
+import com.toplyh.latte.core.util.callback.CallbackType;
+import com.toplyh.latte.core.util.callback.IGlobalCallback;
 import com.toplyh.latte.ec.R;
 import com.toplyh.latte.ec.R2;
 import com.toplyh.latte.ec.main.EcBottomDelegate;
+import com.toplyh.latte.ec.main.index.search.SearchDelegate;
 import com.toplyh.latte.ui.recycler.BaseDecoration;
 import com.toplyh.latte.ui.refresh.RefreshHandler;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
-public class IndexDelegate extends BottomItemDelegate {
+public class IndexDelegate extends BottomItemDelegate implements View.OnFocusChangeListener {
 
     @BindView(R2.id.srl_index)
     SwipeRefreshLayout mRefreshLayout = null;
@@ -42,9 +47,21 @@ public class IndexDelegate extends BottomItemDelegate {
 
     private RefreshHandler mRefreshHandler = null;
 
+    @OnClick(R2.id.icon_index_scan)
+    void onClickScanQrCode(){
+        startScanWithCheck(this.getParentDelegate());
+    }
+
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
         mRefreshHandler = RefreshHandler.create(mRefreshLayout, mRecyclerView, new IndexDataConverter());
+        CallbackManager.getInstance().addCallback(CallbackType.ON_SCAN, new IGlobalCallback<String>() {
+            @Override
+            public void execute(@Nullable String args) {
+                Toast.makeText(getContext(),args,Toast.LENGTH_LONG).show();
+            }
+        });
+        mSearchView.setOnFocusChangeListener(this);
     }
 
     private void initRefreshLayout() {
@@ -78,4 +95,10 @@ public class IndexDelegate extends BottomItemDelegate {
         return R.layout.delegate_index;
     }
 
+    @Override
+    public void onFocusChange(View v, boolean hasFocus) {
+        if (hasFocus){
+            getParentDelegate().start(new SearchDelegate());
+        }
+    }
 }
