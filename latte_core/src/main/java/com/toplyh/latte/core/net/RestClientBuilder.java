@@ -116,6 +116,7 @@ public class RestClientBuilder {
     }
 
     public final RestClientBuilder name(String name){
+
         this.mName=name;
         return this;
     }

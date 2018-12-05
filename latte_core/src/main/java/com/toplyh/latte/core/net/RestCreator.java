@@ -2,6 +2,7 @@ package com.toplyh.latte.core.net;
 
 import com.toplyh.latte.core.global.ConfigKeys;
 import com.toplyh.latte.core.global.Latte;
+import com.toplyh.latte.core.net.rx.RxRestService;
 
 import java.util.ArrayList;
 import java.util.WeakHashMap;
@@ -10,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class RestCreator {
@@ -35,6 +37,7 @@ public class RestCreator {
                 .baseUrl(BASE_URL)
                 .client(OKHttpHolder.OK_HTTP_CLIENT)
                 .addConverterFactory(ScalarsConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
     }
 
@@ -65,4 +68,14 @@ public class RestCreator {
         private static final RestService REST_SERVICE =
                 RetrofitHolder.RETROFIT_CLIENT.create(RestService.class);
     }
+
+    private static final class RxRestServiceHolder {
+        private static final RxRestService RX_REST_SERVICE =
+                RetrofitHolder.RETROFIT_CLIENT.create(RxRestService.class);
+    }
+
+    public static RxRestService getRxRestService() {
+        return RxRestServiceHolder.RX_REST_SERVICE;
+    }
+
 }
