@@ -10,6 +10,7 @@ import com.toplyh.festec.example.event.ShareEvent;
 import com.toplyh.latte.core.global.Latte;
 import com.toplyh.festec.example.event.TestEvent;
 import com.toplyh.latte.core.net.interceptors.DebugInterceptor;
+import com.toplyh.latte.core.net.rx.AddCookieInterceptor;
 import com.toplyh.latte.core.util.callback.CallbackManager;
 import com.toplyh.latte.core.util.callback.CallbackType;
 import com.toplyh.latte.core.util.callback.IGlobalCallback;
@@ -27,7 +28,10 @@ public class ExampleApp extends Application {
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FontEcModule())
                 .withNativeApiHost("http://mock.fulingjie.com/mock/data/")
+                .withWebApiHost("https://www.baidu.com/")
                 .withInterceptor(new DebugInterceptor("index", R.raw.test))
+                //添加Cookie同步拦截器
+                .withInterceptor(new AddCookieInterceptor())
                 .withAppId("wx7965b4ad729aadf9")
                 .withAppSecret("9f278ff963aa9b5a908cb2dbfb88b884")
                 .withJavascriptInterface("latte")
