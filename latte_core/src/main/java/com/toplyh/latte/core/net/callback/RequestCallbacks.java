@@ -1,7 +1,7 @@
 package com.toplyh.latte.core.net.callback;
 
 
-import com.toplyh.latte.core.app.Latte;
+import com.toplyh.latte.core.global.Latte;
 import com.toplyh.latte.core.ui.loader.LatteLoader;
 import com.toplyh.latte.core.ui.loader.LoaderStyle;
 

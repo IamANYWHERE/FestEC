@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
-import com.toplyh.latte.core.delegates.LatteDelegate;
+import com.toplyh.latte.core.fragments.LatteDelegate;
 import com.toplyh.latte.core.util.callback.CallbackManager;
 import com.toplyh.latte.core.util.callback.CallbackType;
 import com.toplyh.latte.core.util.storage.LattePreference;

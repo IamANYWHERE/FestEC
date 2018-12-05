@@ -4,7 +4,7 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.SimpleClickListener;
-import com.toplyh.latte.core.delegates.LatteDelegate;
+import com.toplyh.latte.core.fragments.LatteDelegate;
 
 public class OrderListClickListener extends SimpleClickListener {
 

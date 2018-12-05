@@ -9,12 +9,11 @@ import android.support.v7.widget.ContentFrameLayout;
 import android.view.MotionEvent;
 
 import com.toplyh.latte.core.R;
-import com.toplyh.latte.core.delegates.LatteDelegate;
+import com.toplyh.latte.core.fragments.LatteDelegate;
 
 import me.yokeyword.fragmentation.ExtraTransaction;
 import me.yokeyword.fragmentation.ISupportActivity;
 import me.yokeyword.fragmentation.ISupportFragment;
-import me.yokeyword.fragmentation.SupportActivity;
 import me.yokeyword.fragmentation.SupportActivityDelegate;
 import me.yokeyword.fragmentation.SupportFragment;
 import me.yokeyword.fragmentation.SupportHelper;

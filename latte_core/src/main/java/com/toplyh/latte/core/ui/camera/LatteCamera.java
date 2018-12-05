@@ -3,7 +3,7 @@ package com.toplyh.latte.core.ui.camera;
 
 import android.net.Uri;
 
-import com.toplyh.latte.core.delegates.PermissionCheckerDelegate;
+import com.toplyh.latte.core.fragments.PermissionCheckerDelegate;
 import com.toplyh.latte.core.util.file.FileUtil;
 
 /**

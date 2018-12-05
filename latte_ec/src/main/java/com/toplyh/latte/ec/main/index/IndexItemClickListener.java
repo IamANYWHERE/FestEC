@@ -4,8 +4,10 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.SimpleClickListener;
-import com.toplyh.latte.core.delegates.LatteDelegate;
+import com.toplyh.latte.core.fragments.LatteDelegate;
 import com.toplyh.latte.ec.detail.GoodsDetailDelegate;
+import com.toplyh.latte.ui.recycler.MultipleFields;
+import com.toplyh.latte.ui.recycler.MultipleItemEntity;
 
 public class IndexItemClickListener extends SimpleClickListener {
 
@@ -15,13 +17,15 @@ public class IndexItemClickListener extends SimpleClickListener {
         DELEGATE = delegate;
     }
 
-    public static IndexItemClickListener create(LatteDelegate delegate){
+    public static IndexItemClickListener create(LatteDelegate delegate) {
         return new IndexItemClickListener(delegate);
     }
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        final GoodsDetailDelegate goodsDetailDelegate = GoodsDetailDelegate.create();
+        final MultipleItemEntity entity = (MultipleItemEntity) adapter.getData().get(position);
+        final int goodsId = entity.getField(MultipleFields.ID);
+        final GoodsDetailDelegate goodsDetailDelegate = GoodsDetailDelegate.create(goodsId);
         DELEGATE.start(goodsDetailDelegate);
     }
 

@@ -15,10 +15,17 @@
             android:layout_height="wrap_content">
 
             <android.support.design.widget.CollapsingToolbarLayout
+                app:titleEnabled="true"
+                app:title="商品内容"
+                app:expandedTitleGravity="top"
+                app:expandedTitleMarginTop="@dimen/dp_10"
+                app:expandedTitleTextAppearance="@style/style_text_expanded"
+                app:collapsedTitleTextAppearance="@style/style_text_collapsed"
+                app:collapsedTitleGravity="center"
                 android:id="@+id/collapsing_toolbar_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
                 app:statusBarScrim="@android:color/transparent">
 
                 <RelativeLayout
@@ -33,7 +40,8 @@
                     <android.support.v7.widget.ContentFrameLayout
                         android:id="@+id/frame_goods_info"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/detail_banner"/>
                 </RelativeLayout>
 
                 <android.support.v7.widget.Toolbar
@@ -42,29 +50,6 @@
                     android:layout_height="?android:attr/actionBarSize"
                     app:layout_collapseMode="pin">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <com.joanzapata.iconify.widget.IconTextView
-                            android:id="@+id/icon_goods_back"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="12dp"
-                            android:gravity="center"
-                            android:text="{fa-chevron-left}"
-                            android:textColor="@android:color/black"
-                            android:textSize="26sp" />
-
-                        <android.support.v7.widget.AppCompatTextView
-                            android:id="@+id/tv_detail_title_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:text="商品详情"
-                            android:textColor="@android:color/black"
-                            android:textSize="20sp" />
-                    </RelativeLayout>
                 </android.support.v7.widget.Toolbar>
                 <!--如果将TabLayout写在这里，将透明-->
             </android.support.design.widget.CollapsingToolbarLayout>

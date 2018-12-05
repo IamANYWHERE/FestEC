@@ -5,8 +5,8 @@ import android.app.Activity;
 import com.tencent.mm.opensdk.modelmsg.SendAuth;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
-import com.toplyh.latte.core.app.ConfigKeys;
-import com.toplyh.latte.core.app.Latte;
+import com.toplyh.latte.core.global.ConfigKeys;
+import com.toplyh.latte.core.global.Latte;
 import com.toplyh.latte.core.weichat.callbacks.IWeChatSignInCallback;
 
 public class LatteWeChat {

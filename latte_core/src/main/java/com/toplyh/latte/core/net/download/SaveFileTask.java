@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 
-import com.toplyh.latte.core.app.Latte;
+import com.toplyh.latte.core.global.Latte;
 import com.toplyh.latte.core.net.callback.IRequest;
 import com.toplyh.latte.core.net.callback.ISuccess;
 import com.toplyh.latte.core.util.file.FileUtil;
@@ -12,7 +12,6 @@ import com.toplyh.latte.core.util.file.FileUtil;
 import java.io.File;
 import java.io.InputStream;
 
-import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 
 public class SaveFileTask extends AsyncTask<Object, Void, File> {

@@ -7,7 +7,7 @@ import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
 import com.joanzapata.iconify.widget.IconTextView;
-import com.toplyh.latte.core.app.Latte;
+import com.toplyh.latte.core.global.Latte;
 import com.toplyh.latte.core.image.ImageHelper;
 import com.toplyh.latte.core.util.format.PriceFormat;
 import com.toplyh.latte.ec.R;

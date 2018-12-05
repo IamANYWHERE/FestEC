@@ -4,9 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.toplyh.latte.core.delegates.LatteDelegate;
-import com.toplyh.latte.core.delegates.bottom.BottomItemDelegate;
-import com.toplyh.latte.core.delegates.web.WebDelegateImpl;
+import com.toplyh.latte.core.fragments.bottom.BottomItemDelegate;
+import com.toplyh.latte.core.fragments.web.WebDelegateImpl;
 import com.toplyh.latte.ec.R;
 
 import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;

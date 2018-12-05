@@ -2,15 +2,11 @@ package com.toplyh.latte.core.ui.camera;
 
 import android.content.ContentValues;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.view.Gravity;
 import android.view.View;
@@ -19,9 +15,8 @@ import android.view.WindowManager;
 
 import com.blankj.utilcode.util.FileUtils;
 import com.toplyh.latte.core.R;
-import com.toplyh.latte.core.delegates.PermissionCheckerDelegate;
+import com.toplyh.latte.core.fragments.PermissionCheckerDelegate;
 import com.toplyh.latte.core.util.file.FileUtil;
-import com.toplyh.latte.core.util.log.LatteLogger;
 
 import java.io.File;
 

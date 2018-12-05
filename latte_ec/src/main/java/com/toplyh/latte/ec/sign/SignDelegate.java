@@ -2,7 +2,7 @@ package com.toplyh.latte.ec.sign;
 
 import android.app.Activity;
 
-import com.toplyh.latte.core.delegates.LatteDelegate;
+import com.toplyh.latte.core.fragments.LatteDelegate;
 
 public abstract class SignDelegate extends LatteDelegate {
 

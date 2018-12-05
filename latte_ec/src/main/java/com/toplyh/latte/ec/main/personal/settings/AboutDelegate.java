@@ -6,10 +6,9 @@ import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
 import com.alibaba.fastjson.JSON;
-import com.toplyh.latte.core.delegates.LatteDelegate;
+import com.toplyh.latte.core.fragments.LatteDelegate;
 import com.toplyh.latte.core.net.RestClient;
 import com.toplyh.latte.core.net.callback.ISuccess;
-import com.toplyh.latte.core.util.log.LatteLogger;
 import com.toplyh.latte.ec.R;
 import com.toplyh.latte.ec.R2;
 

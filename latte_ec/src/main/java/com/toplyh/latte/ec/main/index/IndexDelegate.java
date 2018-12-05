@@ -1,6 +1,5 @@
 package com.toplyh.latte.ec.main.index;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -13,8 +12,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.joanzapata.iconify.widget.IconTextView;
-import com.toplyh.latte.core.app.Latte;
-import com.toplyh.latte.core.delegates.bottom.BottomItemDelegate;
+import com.toplyh.latte.core.fragments.bottom.BottomItemDelegate;
 import com.toplyh.latte.core.util.callback.CallbackManager;
 import com.toplyh.latte.core.util.callback.CallbackType;
 import com.toplyh.latte.core.util.callback.IGlobalCallback;
@@ -24,8 +22,6 @@ import com.toplyh.latte.ec.main.EcBottomDelegate;
 import com.toplyh.latte.ec.main.index.search.SearchDelegate;
 import com.toplyh.latte.ui.recycler.BaseDecoration;
 import com.toplyh.latte.ui.refresh.RefreshHandler;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.OnClick;

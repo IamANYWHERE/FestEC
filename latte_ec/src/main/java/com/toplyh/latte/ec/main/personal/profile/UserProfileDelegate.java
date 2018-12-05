@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.toplyh.latte.core.delegates.LatteDelegate;
+import com.toplyh.latte.core.fragments.LatteDelegate;
 import com.toplyh.latte.ec.R;
 import com.toplyh.latte.ec.R2;
 import com.toplyh.latte.ec.main.personal.list.ListAdapter;

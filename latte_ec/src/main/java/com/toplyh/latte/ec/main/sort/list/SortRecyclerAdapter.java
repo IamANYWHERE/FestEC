@@ -5,7 +5,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
-import com.toplyh.latte.core.delegates.LatteDelegate;
+import com.toplyh.latte.core.fragments.LatteDelegate;
 import com.toplyh.latte.ec.R;
 import com.toplyh.latte.ec.main.sort.SortDelegate;
 import com.toplyh.latte.ec.main.sort.content.ContentDelegate;

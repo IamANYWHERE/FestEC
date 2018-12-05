@@ -13,13 +13,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.tencent.mm.opensdk.modelpay.PayReq;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
-import com.toplyh.latte.core.app.ConfigKeys;
-import com.toplyh.latte.core.app.Latte;
-import com.toplyh.latte.core.delegates.LatteDelegate;
+import com.toplyh.latte.core.global.ConfigKeys;
+import com.toplyh.latte.core.global.Latte;
+import com.toplyh.latte.core.fragments.LatteDelegate;
 import com.toplyh.latte.core.net.RestClient;
 import com.toplyh.latte.core.net.callback.ISuccess;
 import com.toplyh.latte.core.ui.loader.LatteLoader;

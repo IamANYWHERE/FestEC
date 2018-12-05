@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.toplyh.latte.core.delegates.bottom.BottomItemDelegate;
+import com.toplyh.latte.core.fragments.bottom.BottomItemDelegate;
 import com.toplyh.latte.core.image.ImageHelper;
 import com.toplyh.latte.ec.R;
 import com.toplyh.latte.ec.R2;

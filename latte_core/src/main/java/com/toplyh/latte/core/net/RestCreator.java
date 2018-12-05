@@ -1,7 +1,7 @@
 package com.toplyh.latte.core.net;
 
-import com.toplyh.latte.core.app.ConfigKeys;
-import com.toplyh.latte.core.app.Latte;
+import com.toplyh.latte.core.global.ConfigKeys;
+import com.toplyh.latte.core.global.Latte;
 
 import java.util.ArrayList;
 import java.util.WeakHashMap;
@@ -29,7 +29,7 @@ public class RestCreator {
     //懒惰生成retrofitclient
     private static final class RetrofitHolder {
         private static final String BASE_URL = (String) Latte.getConfigurations()
-                .get(ConfigKeys.API_HOST);
+                .get(ConfigKeys.NATIVE_API_HOST);
         @SuppressWarnings("ConstantConditions")
         private static final Retrofit RETROFIT_CLIENT = new Retrofit.Builder()
                 .baseUrl(BASE_URL)

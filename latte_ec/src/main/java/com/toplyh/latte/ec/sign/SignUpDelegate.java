@@ -1,17 +1,12 @@
 package com.toplyh.latte.ec.sign;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
-import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.AppCompatTextView;
-import android.util.EventLog;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
-import com.toplyh.latte.core.delegates.LatteDelegate;
 import com.toplyh.latte.core.net.RestClient;
 import com.toplyh.latte.core.net.callback.ISuccess;
 import com.toplyh.latte.core.util.log.LatteLogger;
@@ -20,7 +15,6 @@ import com.toplyh.latte.ec.R2;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import me.yokeyword.fragmentation.SupportActivity;
 
 public class SignUpDelegate extends SignDelegate {
 

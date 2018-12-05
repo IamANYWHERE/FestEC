@@ -4,9 +4,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
-import android.widget.Toast;
 
-import com.toplyh.latte.core.delegates.LatteDelegate;
+import com.toplyh.latte.core.fragments.LatteDelegate;
 import com.toplyh.latte.core.util.callback.CallbackManager;
 import com.toplyh.latte.core.util.callback.CallbackType;
 import com.toplyh.latte.core.util.callback.IGlobalCallback;

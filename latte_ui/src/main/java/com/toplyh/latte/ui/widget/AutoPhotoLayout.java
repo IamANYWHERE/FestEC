@@ -14,12 +14,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 
 import com.joanzapata.iconify.widget.IconTextView;
-import com.toplyh.latte.core.delegates.LatteDelegate;
+import com.toplyh.latte.core.fragments.LatteDelegate;
 import com.toplyh.latte.core.image.ImageHelper;
-import com.toplyh.latte.core.util.log.LatteLogger;
 import com.toplyh.latte.ui.R;
 
 import java.util.ArrayList;

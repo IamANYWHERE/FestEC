@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.toplyh.latte.core.delegates.bottom.BottomItemDelegate;
+import com.toplyh.latte.core.fragments.bottom.BottomItemDelegate;
 import com.toplyh.latte.ec.R;
 import com.toplyh.latte.ec.main.sort.content.ContentDelegate;
 import com.toplyh.latte.ec.main.sort.list.VerticalListDelegate;

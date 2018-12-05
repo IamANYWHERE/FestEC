@@ -1,10 +1,9 @@
 package com.toplyh.latte.ec.main.personal.list;
 
-import android.support.v4.widget.CompoundButtonCompat;
 import android.widget.CompoundButton;
 
 import com.chad.library.adapter.base.entity.MultiItemEntity;
-import com.toplyh.latte.core.delegates.LatteDelegate;
+import com.toplyh.latte.core.fragments.LatteDelegate;
 
 public class ListBean implements MultiItemEntity {
 

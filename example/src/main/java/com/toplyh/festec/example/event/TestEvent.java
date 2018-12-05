@@ -3,7 +3,7 @@ package com.toplyh.festec.example.event;
 import android.webkit.WebView;
 import android.widget.Toast;
 
-import com.toplyh.latte.core.delegates.web.event.Event;
+import com.toplyh.latte.core.fragments.web.event.Event;
 
 public class TestEvent extends Event {
     @Override

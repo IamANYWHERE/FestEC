@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.joanzapata.iconify.widget.IconTextView;
-import com.toplyh.latte.core.delegates.bottom.BottomItemDelegate;
+import com.toplyh.latte.core.fragments.bottom.BottomItemDelegate;
 import com.toplyh.latte.core.net.RestClient;
 import com.toplyh.latte.core.net.callback.ISuccess;
 import com.toplyh.latte.core.util.format.PriceFormat;

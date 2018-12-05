@@ -1,6 +1,5 @@
 package com.toplyh.latte.ec.sign;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
@@ -8,7 +7,6 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
-import com.toplyh.latte.core.delegates.LatteDelegate;
 import com.toplyh.latte.core.net.RestClient;
 import com.toplyh.latte.core.net.callback.ISuccess;
 import com.toplyh.latte.core.util.log.LatteLogger;

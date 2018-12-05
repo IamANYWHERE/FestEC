@@ -5,15 +5,12 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.toplyh.latte.core.delegates.LatteDelegate;
+import com.toplyh.latte.core.fragments.LatteDelegate;
 import com.toplyh.latte.core.net.RestClient;
-import com.toplyh.latte.core.net.RestClientBuilder;
 import com.toplyh.latte.core.net.callback.IError;
 import com.toplyh.latte.core.net.callback.IFailure;
 import com.toplyh.latte.core.net.callback.ISuccess;
-import com.toplyh.latte.core.util.file.FileUtil;
 
 import butterknife.BindView;
 

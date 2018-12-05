@@ -7,7 +7,7 @@ import com.facebook.stetho.Stetho;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
 import com.mob.MobSDK;
 import com.toplyh.festec.example.event.ShareEvent;
-import com.toplyh.latte.core.app.Latte;
+import com.toplyh.latte.core.global.Latte;
 import com.toplyh.festec.example.event.TestEvent;
 import com.toplyh.latte.core.net.interceptors.DebugInterceptor;
 import com.toplyh.latte.core.util.callback.CallbackManager;
@@ -26,7 +26,7 @@ public class ExampleApp extends Application {
         Latte.init(this)
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FontEcModule())
-                .withApiHost("http://mock.fulingjie.com/mock/data/")
+                .withNativeApiHost("http://mock.fulingjie.com/mock/data/")
                 .withInterceptor(new DebugInterceptor("index", R.raw.test))
                 .withAppId("wx7965b4ad729aadf9")
                 .withAppSecret("9f278ff963aa9b5a908cb2dbfb88b884")

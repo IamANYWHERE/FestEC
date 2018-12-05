@@ -2,9 +2,9 @@ package com.toplyh.latte.ec.launcher;
 
 import android.app.Activity;
 
-import com.toplyh.latte.core.app.AccountManager;
-import com.toplyh.latte.core.app.IUserChecker;
-import com.toplyh.latte.core.delegates.LatteDelegate;
+import com.toplyh.latte.core.global.AccountManager;
+import com.toplyh.latte.core.global.IUserChecker;
+import com.toplyh.latte.core.fragments.LatteDelegate;
 import com.toplyh.latte.ui.launcher.ILauncherListener;
 
 

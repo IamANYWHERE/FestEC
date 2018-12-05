@@ -7,10 +7,9 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
-import com.toplyh.latte.core.app.Latte;
+import com.toplyh.latte.core.global.Latte;
 import com.toplyh.latte.core.net.RestClient;
 import com.toplyh.latte.core.net.callback.ISuccess;
-import com.toplyh.latte.core.util.log.LatteLogger;
 import com.toplyh.latte.ui.recycler.DataConverter;
 import com.toplyh.latte.ui.recycler.MultipleRecyclerAdapter;
 

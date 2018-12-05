@@ -5,7 +5,7 @@ import android.preference.PreferenceManager;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.toplyh.latte.core.app.Latte;
+import com.toplyh.latte.core.global.Latte;
 
 public final class LattePreference {
 

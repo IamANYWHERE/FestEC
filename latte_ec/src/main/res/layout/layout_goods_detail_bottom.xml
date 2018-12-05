@@ -63,12 +63,12 @@
             android:textSize="12sp" />
 
         <com.toplyh.latte.ui.widget.CircleTextView
-            android:id="@+id/tv_shopping_amount"
+            android:id="@+id/tv_shopping_cart_amount"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_alignEnd="@id/icon_shop_cart"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:gravity="center"
             android:textColor="@android:color/white"

@@ -12,7 +12,7 @@ import com.alibaba.fastjson.JSON;
 import com.blankj.utilcode.util.StringUtils;
 import com.choices.divider.Divider;
 import com.choices.divider.DividerItemDecoration;
-import com.toplyh.latte.core.delegates.LatteDelegate;
+import com.toplyh.latte.core.fragments.LatteDelegate;
 import com.toplyh.latte.core.net.RestClient;
 import com.toplyh.latte.core.net.callback.ISuccess;
 import com.toplyh.latte.core.util.storage.LattePreference;

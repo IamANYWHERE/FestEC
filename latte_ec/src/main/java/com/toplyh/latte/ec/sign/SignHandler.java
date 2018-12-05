@@ -2,7 +2,7 @@ package com.toplyh.latte.ec.sign;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.toplyh.latte.core.app.AccountManager;
+import com.toplyh.latte.core.global.AccountManager;
 import com.toplyh.latte.ec.database.DatabaseManager;
 import com.toplyh.latte.ec.database.UserProfile;
 
