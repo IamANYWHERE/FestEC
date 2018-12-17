@@ -1,5 +1,7 @@
 package com.toplyh.festec.example.event;
 
+import android.widget.Toast;
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.toplyh.festec.example.share.ShareHelper;
@@ -16,7 +18,8 @@ public class ShareEvent extends Event {
         final String title = object.getString("title");
         final String text = object.getString("text");
 
-        ShareHelper.showShareWeChat(getContext(),title,text,imageUrl,url);
+        //ShareHelper.showShareWeChat(getContext(),title,text,imageUrl,url);
+        Toast.makeText(getContext(),title,Toast.LENGTH_SHORT).show();
         return null;
     }
 }

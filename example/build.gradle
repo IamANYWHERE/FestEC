@@ -1,32 +1,32 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.mob.sdk'
-MobSDK {
-    appKey "290ef906847f8"
-    appSecret "4ab91220520821129a7b24fc3b7243bb"
-
-    ShareSDK {
-        //平台配置信息
-        devInfo {
-            Wechat {
-                appId "wx7965b4ad729aadf9"
-                appSecret "9f278ff963aa9b5a908cb2dbfb88b884"
-                enable true
-            }
-            WechatMoments{
-                appId "wx7965b4ad729aadf9"
-                appSecret "9f278ff963aa9b5a908cb2dbfb88b884"
-                enable true
-
-            }
-            WechatFavorite{
-                appId "wx7965b4ad729aadf9"
-                appSecret "9f278ff963aa9b5a908cb2dbfb88b884"
-                enable true
-            }
-        }
-    }
-
-}
+//apply plugin: 'com.mob.sdk'
+//MobSDK {
+//    appKey "290ef906847f8"
+//    appSecret "4ab91220520821129a7b24fc3b7243bb"
+//
+//    ShareSDK {
+//        //平台配置信息
+//        devInfo {
+//            Wechat {
+//                appId "wx7965b4ad729aadf9"
+//                appSecret "9f278ff963aa9b5a908cb2dbfb88b884"
+//                enable true
+//            }
+//            WechatMoments{
+//                appId "wx7965b4ad729aadf9"
+//                appSecret "9f278ff963aa9b5a908cb2dbfb88b884"
+//                enable true
+//
+//            }
+//            WechatFavorite{
+//                appId "wx7965b4ad729aadf9"
+//                appSecret "9f278ff963aa9b5a908cb2dbfb88b884"
+//                enable true
+//            }
+//        }
+//    }
+//
+//}
 android {
     compileSdkVersion 28
     defaultConfig {

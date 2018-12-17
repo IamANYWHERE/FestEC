@@ -87,7 +87,7 @@ public class IndexDelegate extends BottomItemDelegate implements View.OnFocusCha
 
                     @Override
                     public void onNext(String s) {
-                        Toast.makeText(getContext(),s,Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getContext(),s,Toast.LENGTH_LONG).show();
                     }
 
                     @Override
@@ -119,7 +119,7 @@ public class IndexDelegate extends BottomItemDelegate implements View.OnFocusCha
 
                     @Override
                     public void onNext(String s) {
-                        Toast.makeText(getContext(),s,Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getContext(),s,Toast.LENGTH_LONG).show();
                     }
 
                     @Override

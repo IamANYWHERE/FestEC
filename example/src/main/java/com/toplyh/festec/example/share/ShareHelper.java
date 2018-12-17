@@ -13,13 +13,11 @@ import com.toplyh.latte.core.weichat.LatteWeChat;
 
 import java.io.ByteArrayOutputStream;
 
-import cn.sharesdk.framework.ShareSDK;
-import cn.sharesdk.onekeyshare.OnekeyShare;
 
 public class ShareHelper {
 
     public static void showShareWeChat(Context context, String title, String text, String imageUrl, String url) {
-        OnekeyShare oks = new OnekeyShare();
+/*        OnekeyShare oks = new OnekeyShare();
         //关闭sso授权
         oks.disableSSOWhenAuthorize();
 
@@ -32,27 +30,27 @@ public class ShareHelper {
         // url在微信、微博，Facebook等平台中使用
         oks.setUrl(url);
         // 启动分享GUI
-        oks.show(context);
+        oks.show(context);*/
     }
 
     public static void share(Context context, String title, String text, String imageUrl, String url) {
-        WXWebpageObject webpage = new WXWebpageObject();
-        webpage.webpageUrl = url;
-
-        WXMediaMessage msg = new WXMediaMessage(webpage);
-        msg.title = title;
-        msg.description = text;
-        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), com.toplyh.latte.ec.R.mipmap.avatar);
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-        byte[] datas = baos.toByteArray();
-        msg.thumbData = datas;
-
-        SendMessageToWX.Req req = new SendMessageToWX.Req();
-        req.transaction = "webpage";
-        req.message = msg;
-        req.scene = SendMessageToWX.Req.WXSceneSession;
-
-        LatteWeChat.getInstance().getWXAPI().sendReq(req);
+//        WXWebpageObject webpage = new WXWebpageObject();
+//        webpage.webpageUrl = url;
+//
+//        WXMediaMessage msg = new WXMediaMessage(webpage);
+//        msg.title = title;
+//        msg.description = text;
+//        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), com.toplyh.latte.ec.R.mipmap.avatar);
+//        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+//        byte[] datas = baos.toByteArray();
+//        msg.thumbData = datas;
+//
+//        SendMessageToWX.Req req = new SendMessageToWX.Req();
+//        req.transaction = "webpage";
+//        req.message = msg;
+//        req.scene = SendMessageToWX.Req.WXSceneSession;
+//
+//        LatteWeChat.getInstance().getWXAPI().sendReq(req);
     }
 }

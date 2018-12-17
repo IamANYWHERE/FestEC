@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 
 import com.facebook.stetho.Stetho;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
-import com.mob.MobSDK;
 import com.toplyh.festec.example.event.ShareEvent;
 import com.toplyh.latte.core.global.Latte;
 import com.toplyh.festec.example.event.TestEvent;
@@ -65,7 +64,7 @@ public class ExampleApp extends Application {
                     }
                 });
         //初始化fMobSDK
-        MobSDK.init(this,"290ef906847f8","4ab91220520821129a7b24fc3b7243bb");
+        //MobSDK.init(this,"290ef906847f8","4ab91220520821129a7b24fc3b7243bb");
     }
 
     private void initStetho() {
