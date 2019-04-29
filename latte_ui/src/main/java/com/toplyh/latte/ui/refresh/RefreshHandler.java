@@ -109,6 +109,6 @@ public class RefreshHandler implements SwipeRefreshLayout.OnRefreshListener,
 
     @Override
     public void onLoadMoreRequested() {
-        paging("http://mock.fulingjie.com/mock/api/");
+        paging("api/");
     }
 }

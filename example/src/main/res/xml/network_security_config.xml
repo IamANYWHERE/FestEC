@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">mock.fulingjie.com</domain>
+        <domain includeSubdomains="true">i9.qhimg.com</domain>
+        <domain includeSubdomains="true">toplyh.oss-cn-hongkong.aliyuncs.com</domain>
+        <domain includeSubdomains="true">i8.mifile.cn</domain>
+    </domain-config>
+</network-security-config>

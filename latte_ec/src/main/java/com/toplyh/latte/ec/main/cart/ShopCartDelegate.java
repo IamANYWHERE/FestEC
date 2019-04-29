@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.joanzapata.iconify.widget.IconTextView;
 import com.toplyh.latte.core.fragments.bottom.BottomItemDelegate;
 import com.toplyh.latte.core.net.RestClient;
+import com.toplyh.latte.core.net.callback.IFailure;
 import com.toplyh.latte.core.net.callback.ISuccess;
 import com.toplyh.latte.core.util.format.PriceFormat;
 import com.toplyh.latte.core.util.log.LatteLogger;
@@ -34,6 +35,7 @@ import butterknife.OnClick;
 
 public class ShopCartDelegate extends BottomItemDelegate implements
         ISuccess,
+        IFailure,
         IShopItemStateListener,
         ICartItemPriceListener,
         IAlPayResultListener {
@@ -229,8 +231,9 @@ public class ShopCartDelegate extends BottomItemDelegate implements
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
         RestClient.builder()
-                .url("shop_cart_data.json")
+                .url("data/shop_cart_data.json")
                 .success(this)
+                .failure(this)
                 .build()
                 .get();
         mIconSelected.setTag(0);
@@ -251,6 +254,17 @@ public class ShopCartDelegate extends BottomItemDelegate implements
         checkItemCount();
     }
 
+    @Override
+    public void onFailure() {
+        mAdapter = new ShopCartAdapter(null);
+        mAdapter.setShopItemStateListener(this);
+        mAdapter.setCartItemPriceListener(this);
+        final LinearLayoutManager manager = new LinearLayoutManager(getContext());
+        mRecyclerView.setLayoutManager(manager);
+        mRecyclerView.setAdapter(mAdapter);
+        mTotalPrice = 0;
+        mTvTotalPrice.setText(PriceFormat.formatPrice(mTotalPrice));
+    }
     @Override
     public void onAllSelected() {
         setIconSelectState(true);
@@ -291,4 +305,5 @@ public class ShopCartDelegate extends BottomItemDelegate implements
     public void onPayConnectError() {
 
     }
+
 }

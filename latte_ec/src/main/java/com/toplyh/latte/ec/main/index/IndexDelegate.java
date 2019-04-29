@@ -74,7 +74,7 @@ public class IndexDelegate extends BottomItemDelegate implements View.OnFocusCha
 
     //TODO:测试用，可删
     void onCallRxGet() {
-        final String url = "http://mock.fulingjie.com/mock/api/";
+        final String url = "api/";
         final WeakHashMap<String, Object> params = new WeakHashMap<>();
         final Observable<String> observable = RestCreator.getRxRestService().get(url, params);
         observable.subscribeOn(Schedulers.io())
@@ -104,7 +104,7 @@ public class IndexDelegate extends BottomItemDelegate implements View.OnFocusCha
 
     //TODO:测试用，可删
     void onCallRxRestClient(){
-        final String url = "http://mock.fulingjie.com/mock/api/";
+        final String url = "api/";
         RxRestClient.builder()
                 .url(url)
                 .build()
@@ -158,7 +158,7 @@ public class IndexDelegate extends BottomItemDelegate implements View.OnFocusCha
         super.onLazyInitView(savedInstanceState);
         initRefreshLayout();
         initRecyclerView();
-        mRefreshHandler.firstPage("http://mock.fulingjie.com/mock/api/");
+        mRefreshHandler.firstPage("api/");
     }
 
     @Override

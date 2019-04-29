@@ -125,7 +125,7 @@ public class GoodsDetailDelegate extends LatteDelegate implements
 
     private void initData() {
         RestClient.builder()
-                .url("goods_detail_data_1.json")
+                .url("data/goods_detail_data_1.json")
                 .params("goods_id", mGoodsId)
                 .loader(getContext())
                 .success(new ISuccess() {

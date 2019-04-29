@@ -54,7 +54,7 @@ public class OrderListDelegate extends LatteDelegate {
         setToolbar();
         RestClient.builder()
                 .loader(getContext())
-                .url("order_list.json")
+                .url("data/order_list.json")
                 .params("type", mType)
                 .success(new ISuccess() {
                     @Override

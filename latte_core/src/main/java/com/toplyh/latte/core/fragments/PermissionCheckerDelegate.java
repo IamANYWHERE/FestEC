@@ -136,6 +136,7 @@ public abstract class PermissionCheckerDelegate extends BaseDelegate {
                 case RequestCodes.CROP_ERROR:
                     Toast.makeText(getContext(), "剪裁出错", Toast.LENGTH_SHORT).show();
                     break;
+                default:
             }
         }
     }

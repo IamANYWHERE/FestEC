@@ -8,15 +8,28 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.toplyh.latte.core.net.RestClient;
+import com.toplyh.latte.core.net.RestCreator;
+import com.toplyh.latte.core.net.callback.IFailure;
 import com.toplyh.latte.core.net.callback.ISuccess;
+import com.toplyh.latte.core.net.rx.RxRestClient;
 import com.toplyh.latte.core.util.log.LatteLogger;
 import com.toplyh.latte.core.weichat.LatteWeChat;
 import com.toplyh.latte.core.weichat.callbacks.IWeChatSignInCallback;
 import com.toplyh.latte.ec.R;
 import com.toplyh.latte.ec.R2;
 
+import java.util.HashMap;
+
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.reactivex.Observer;
+import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SignInDelegate extends SignDelegate {
 
@@ -30,19 +43,27 @@ public class SignInDelegate extends SignDelegate {
     void onClickSignIn(){
         if (checkForm()) {
             RestClient.builder()
-                    .url("http://mock.fulingjie.com/mock/data/user_profile.json")
+                    .url("data/user_profile.json")
                     .params("email",mEmail.getText().toString())
                     .params("password",mPassword.getText().toString())
+                    .loader(getContext())
                     .success(new ISuccess() {
                         @Override
                         public void onSuccess(String response) {
                             LatteLogger.json("USER_PROFILE",response);
                             SignHandler.onSignUp(response,mISignListener);
+                            Toast.makeText(getContext(), "登录通过", Toast.LENGTH_LONG).show();
+                        }
+                    })
+                    .failure(new IFailure() {
+                        @Override
+                        public void onFailure() {
+                            LatteLogger.json("USER_PROFILE","登陆失败呀");
+                            Toast.makeText(getContext(), "登录失败", Toast.LENGTH_LONG).show();
                         }
                     })
                     .build()
                     .post();
-            Toast.makeText(getContext(), "登录通过", Toast.LENGTH_LONG).show();
         }
     }
 

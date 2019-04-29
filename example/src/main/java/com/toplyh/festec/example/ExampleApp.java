@@ -26,7 +26,7 @@ public class ExampleApp extends Application {
         Latte.init(this)
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FontEcModule())
-                .withNativeApiHost("http://mock.fulingjie.com/mock/data/")
+                .withNativeApiHost("http://mock.fulingjie.com/mock/")
                 .withWebApiHost("https://www.baidu.com/")
                 .withInterceptor(new DebugInterceptor("index", R.raw.test))
                 //添加Cookie同步拦截器
